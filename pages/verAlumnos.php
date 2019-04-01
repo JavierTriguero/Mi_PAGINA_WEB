@@ -22,7 +22,7 @@
     $alumnos = Alumno::devolverAlumnosPaginacion(contador);
     $totalAlumnos = Alumno::totalAlumnos();
   ?>
-  <span class="titulo">ALUMNOS</span>
+  <span class="titulo">Pollos rufino</span>
   <div id="marcoTabla">
     <table>
         <tr>
