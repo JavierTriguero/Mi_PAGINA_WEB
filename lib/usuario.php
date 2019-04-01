@@ -35,7 +35,7 @@
     }
 
     public function altaUsuario(){
-      $conexion = Conexion::conectarBD("localhost", "root", "", "navidad");
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
       $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass', 'usuario')";
       $dev = true;
       try{
@@ -48,7 +48,7 @@
     }
 
     public function buscarUsuario(){
-      $conexion = Conexion::conectarBD("localhost", "root", "", "navidad");
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
       $sql = "SELECT email FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
       if($res->num_rows > 0){
@@ -62,11 +62,11 @@
     }
 
     public function buscarPass(){
-      $conexion = Conexion::conectarBD("localhost", "root", "", "navidad");
-      $sql = "SELECT pas FROM usuarios WHERE email='$this->email'";
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+      $sql = "SELECT pass FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
       if($res->num_rows > 0){
-        $dev = $res->fetch_assoc()['pas'];
+        $dev = $res->fetch_assoc()['pass'];
       }else{
         $dev = false;
       }
@@ -76,7 +76,7 @@
     }
 
     public function buscarTipoUsuario(){
-      $conexion = Conexion::conectarBD("localhost", "root", "", "navidad");
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
       $sql = "SELECT tipoUsr FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
       if($res->num_rows > 0){

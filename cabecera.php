@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
+	/*Incluyo los .php que me van hacer falta para realizar la web*/
 	require_once("lib/conexion.php");
 	require_once("lib/usuario.php");
 	require_once("lib/alumno.php");
@@ -7,7 +8,7 @@
 
 <?php
   session_start();
-
+/*PARA ACCEDER CON TU CUENTA DE USUARIO*/
   if(isset($_POST['acceder'])){
     $email = $_POST['email'];
     $pass = $_POST['pass'];
@@ -78,13 +79,13 @@
 	<meta name="author" content="Wink Hosting (www.winkhosting.com)" />
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<link rel="stylesheet" href="style/style.css" type="text/css" />
-	<title>Cash</title>
+	<title>Pollos rufino</title>
 </head>
 <body>
 	<div id="page" align="center">
 		<div id="toppage" align="center">
 			<div id="date">
-				<div class="smalltext" style="padding:13px;"><strong>ALUMNOS</strong></div>
+				<div class="smalltext" style="padding:13px;"><strong>MIPAGINAWEB</strong></div>
 			</div>
 			<div id="topbar">
 				<?php
