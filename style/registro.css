@@ -1,0 +1,11 @@
+.panel{
+  height: 200px;
+}
+
+#registro{
+  border: 2px solid black;
+  width: 300px;
+  font-size: 11px;
+  color: grey;
+  background: lightyellow;
+}

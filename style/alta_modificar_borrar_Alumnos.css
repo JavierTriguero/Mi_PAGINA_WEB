@@ -1,0 +1,42 @@
+.panel{
+  height: 260px;
+}
+
+.izq{
+   text-align: left;
+}
+
+#marco{
+  width: 350px;
+  color: grey;
+  padding: 10px;
+}
+
+#mensaje{
+  margin-top: 10px;
+}
+
+#mensaje span{
+  font-size: 12px;
+}
+
+span{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#marcoModificar form{
+  margin: 0;
+  padding: 0;
+}
+
+table{
+  margin: 0;
+  width: 200px;
+  border-spacing: 10px;
+}
+
+td{
+  text-align: right;
+  width: auto;
+}

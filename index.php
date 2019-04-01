@@ -1,73 +1,45 @@
 <?php
-	require("cabecera.php");
-	$msg="";
-
+  include("cabecera.php");
 ?>
-<div id="clanci">
-	<?php
-		$opcion="";
-		$pagina="login.php";
-		$actual="Iniciar sesión";
-		
-		if(isset($_GET['p']))
-		$opcion=$_GET['p'];
 
-		
-		if ($_SESSION['admin']) {
-			
-		if($opcion=="ver"){	
-			$actual="VER PRODUCTO";
-			$pagina="ver.php";
-		}
-		if($opcion=="alta" ){	
-			$actual="ALTA PRODUCTO";
-			$pagina="alta.php";
-		}
-		if($opcion=="modificar"){	
-			$actual="MODIFICAR PRODUCTO";
-			$pagina="modificar.php";
-		}
-		if($opcion=="borrar"){	
-			$actual="BORRAR PRODUCTO";
-			$pagina="borrar.php";
-		}
-		if($opcion=="verTodos"){	
-			$actual="VER TODOS PRODUCTOS";
-			$pagina="verTodos.php";
-		}
-		if($opcion=="cambiarpvp"){	
-			$actual="CAMBIAR PVP";
-			$pagina="cambiarpvp.php";
-		}
-	
-		}else{
-			
-		if($opcion=="ver"){	
-			$actual="VER PRODUCTO";
-			$pagina="ver.php";
-		}
-
-		if($opcion=="verTodos"){	
-			$actual="VER TODOS PRODUCTOS";
-			$pagina="verTodos.php";
-		}
-		}
-	
-	
-		
-	?>
-	<h2><a href="#"><?php echo $actual ?></a></h2>
-	
-	<p>
-	 <?php
-		require($pagina);
-	?>
-	</p>
-	<p class='datum'><?php echo date("d-m-Y") ?> <img src='images/strelica2.gif' width='3px' height='5px' alt='' /> 
-	<?php  if(isset($msg))
-			echo "$msg";
-	?></p>	
+<?php
+  $pagina = "";
+  if(isset($_GET['p'])){
+    $pagina = $_GET['p'];
+  }
+?>
+<div id="contenttext">
+  <div class="bodytext" style="padding:12px;" align="justify">
+  </div>
+  <div class="panel" align="justify">
+    <span class="bodytext">
+      <?php
+        if(!isset($_SESSION['email'])){
+          if($pagina == "acceder" || $pagina == ""){
+            include("pages/acceso.php");
+          }else if($pagina == "registrarse"){
+            include("pages/registro.php");
+          }
+        }else{
+          if($pagina == "inicio" || $pagina == "acceder"){
+            include("pages/inicio.php");
+          }else if($pagina == "verAlumnos"){
+            include("pages/verAlumnos.php");
+          }else if($pagina == "modificarAlumnos"){
+            include("pages/modificarAlumnos.php");
+          }else if($pagina == "eliminarAlumnos"){
+            include("pages/eliminarAlumnos.php");
+          }else if($pagina == "verDetalles"){
+            include("pages/verDetalles.php");
+          }else if($pagina == "altaAlumno"){
+            include("pages/altaAlumno.php");
+          }
+        }
+      ?>
+    </span>
+  </div>
+  </div>
 </div>
 <?php
-	require_once("pie.php");
+  include("footer.php");
 ?>

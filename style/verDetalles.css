@@ -1,0 +1,74 @@
+#marco{
+  margin: 10px 10px;
+}
+
+#mensaje{
+  border: 1px solid darkgrey;
+  background: lightyellow;
+  padding: 5px;
+  text-align: center;
+}
+
+.panel{
+  height: auto;
+}
+
+form{
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+table{
+  width: 500px;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin: 0;
+}
+
+td, th{
+  width: 100px;
+  text-align: left;
+}
+
+th{
+  font-size: 18px;
+  color: #FF9900;
+}
+
+td{
+  font-size: 14px;
+}
+
+.id{
+  width: 40px;
+}
+
+#extra{
+  width: auto;
+  table-layout: inherit;
+  border-collapse: inherit;
+  margin: 0;
+}
+
+#extra th{
+  font-size: 14px;
+}
+
+caption{
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+  text-align: left;
+}
+
+#faltas th, td{
+  width: auto;
+}
+
+#añadirFalta{
+  background: lightyellow;
+  border: 2px solid darkgrey;
+  padding: 10px;
+}

@@ -1,0 +1,11 @@
+#inicio{
+  width: 300px;
+  margin: 30px 0;
+  color: grey;
+  padding: 10px;
+}
+
+span{
+  font-size: 20px;
+  font-weight: bold;
+}
