@@ -5,13 +5,14 @@
 ?>
 <div id="clanci">
 	<?php
+		$opcion="";
+		$pagina="login.php";
+		$actual="Iniciar sesión";
 		
-		
-		$opcion="ver";
-		$pagina="ver.php";
-		$actual="VER PRODUCTO";
 		if(isset($_GET['p']))
 		$opcion=$_GET['p'];
+
+		
 		if ($_SESSION['admin']) {
 			
 		if($opcion=="ver"){	
