@@ -14,7 +14,7 @@
       $this->tipo_usu="";
       $this->nombre = $nombre;
       $this->nombre_usuario=$nombre_usuario;
-      $this->id=$dni;
+      $this->id_usu=$dni;
     }
    //Metodos para conseguir los datos que quiera
     function getEmail(){
@@ -61,7 +61,7 @@
 
     public function altaUsuario(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
-      $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass_usu', '$this->tipo_usuario','$this->nombre','$this->nombre_usuario','$this->id_usu')";
+      $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass_usu', '$this->tipo_usuario','$this->id_usu','$this->nombre','$this->nombre_usuario')";
       var_dump($sql);
       $dev = true;
       try{
