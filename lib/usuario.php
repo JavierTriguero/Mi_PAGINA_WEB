@@ -1,15 +1,20 @@
 <?php
   class Usuario{
-
+    private $id;
     private $email;
     private $pass;
     private $tipo;
+    private $nombre;
+    private $nombre_usuario;
+    
 
     function __construct($email, $pass){
       $this->email = $email;
       $this->pass = $pass;
     }
-
+    function getID(){
+      return $this->id;
+    }
     function getEmail(){
       return $this->email;
     }
@@ -21,7 +26,9 @@
     function getTipo(){
       return $this->tipo;
     }
-
+    function setID(){
+      $this->id=$id;
+    }
     function setEmail($email){
       $this->email = $email;
     }
@@ -36,7 +43,7 @@
 
     public function altaUsuario(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
-      $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass', 'usuario')";
+      $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass', 'usuario','$this->id')";
       $dev = true;
       try{
         $conexion->query($sql);
