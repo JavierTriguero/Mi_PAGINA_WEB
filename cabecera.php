@@ -15,7 +15,7 @@
 	$pass = $_POST['pass'];
 	$nombre = $_POST['nombre'];
 	$nombre_usuario=$_POST['nombre_usuario'];
-	$dni=$_POST['dni'];
+	$id=$_POST['dni'];
     $usuario = new Usuario($email, $pass,$nombre,$nombre_usuario,$id);
     $emailUsr = $usuario->buscarUsuario();
     $passUsr = $usuario->buscarPass();

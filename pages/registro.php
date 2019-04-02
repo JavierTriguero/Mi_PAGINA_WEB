@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <span class="titulo">USUARIOS</span>
+    <span class="titulo">REGISTRO DE USUARIOS</span>
     <form action="index.php?p=registrarse" method="post" enctype="multipart/form-data">
         <div id="registro">
             <table>
