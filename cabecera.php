@@ -10,9 +10,13 @@
   session_start();
 /*PARA ACCEDER CON TU CUENTA DE USUARIO*/
   if(isset($_POST['acceder'])){
+		//TE QUEDA MOFICAR ACCEDER
     $email = $_POST['email'];
-    $pass = $_POST['pass'];
-    $usuario = new Usuario($email, $pass);
+	$pass = $_POST['pass'];
+	$nombre = $_POST['nombre'];
+	$nombre_usuario=$_POST['nombre_usuario'];
+	$dni=$_POST['dni'];
+    $usuario = new Usuario($email, $pass,$nombre,$nombre_usuario,$id);
     $emailUsr = $usuario->buscarUsuario();
     $passUsr = $usuario->buscarPass();
 		$tipoUsr = $usuario->buscarTipoUsuario();
@@ -41,14 +45,23 @@
 		if(!empty($_POST['repetirPass'])){
 			$pass2 = $_POST['repetirPass'];
 		}
-		if(empty($_POST['email']) || empty($_POST['pass']) || empty($_POST['repetirPass'])){
+		if(!empty($_POST['nombre'])){
+			$nombre=$_POST['nombre'];
+		}
+		if(!empty($_POST['nombre_usuario'])){
+			$nombre_usuario=$_POST['nombre_usuario'];
+		}
+		if(!empty($_POST['dni'])){
+			$id=$_POST['dni'];
+		}
+		if(empty($_POST['email']) || empty($_POST['pass']) || empty($_POST['repetirPass']) || empty($_POST['nombre']) || empty($_POST['nombre_usuario']) || empty($_POST['dni'])){
 			$msg = "Algún campo no ha sido rellenado";
 		}else{
 			if($pass1 != $pass2){
 				$msg = "Las contraseñas no coinciden";
-			}else{
-				$usuario = new Usuario($email, $pass1);
-				$usuario->setTipo('usuario');
+			}else{	
+				$usuario = new Usuario($email,$pass1,$nombre,$nombre_usuario,$id);
+				$usuario->setTipo_usu('usuario');
 				if($usuario->buscarUsuario() != $email){
 					$usuario->altaUsuario();
 				}else{

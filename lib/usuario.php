@@ -1,49 +1,68 @@
 <?php
   class Usuario{
-    private $id;
+    private $id_usu;
     private $email;
-    private $pass;
-    private $tipo;
+    private $pass_usu;
+    private $tipo_usuario;
     private $nombre;
     private $nombre_usuario;
-    
 
-    function __construct($email, $pass){
+
+    function __construct($email,$pass_usu,$nombre,$nombre_usuario,$dni){
       $this->email = $email;
-      $this->pass = $pass;
+      $this->pass_usu = $pass_usu;
+      $this->tipo_usu="";
+      $this->nombre = $nombre;
+      $this->nombre_usuario=$nombre_usuario;
+      $this->id=$dni;
     }
-    function getID(){
-      return $this->id;
-    }
+   //Metodos para conseguir los datos que quiera
     function getEmail(){
       return $this->email;
     }
 
-    function getPass(){
-      return $this->pass;
+    function getpass_usu(){
+      return $this->pass_usu;
     }
 
-    function getTipo(){
-      return $this->tipo;
+    function gettipo_usu(){
+      return $this->tipo_usu;
     }
-    function setID(){
-      $this->id=$id;
+    function getID(){
+      return $this->id;
+    }
+    function getNombre(){
+      return $this->nombre;
+    }
+    function getnombre_usu(){
+      return $this->nombre_usuario;
+    }
+     //Metodos para asignar los datos que quiera
+    function setID($id_usu){
+      $this->id=$id_usu;
+    } 
+    function setNombre($nombre){
+      $this->nombre=$nombre;
+    }
+    function setnombre_usu($nombre_usuario){
+      $this->nombre_usuario=$nombre_usuario;
     }
     function setEmail($email){
       $this->email = $email;
     }
 
-    function setPass($pass){
-      $this->pass = $pass;
+    function setpass_usu($pass_usu){
+      $this->pass_usu = $pass_usu;
     }
 
-    function setTipo($tipo){
-      $this->tipo = $tipo;
+    function setTipo_usu($tipo_usuario){
+      $this->tipo_usuario = $tipo_usuario;
     }
 
     public function altaUsuario(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
-      $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass', 'usuario','$this->id')";
+      $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass_usu', '$this->tipo_usuario','$this->nombre','$this->nombre_usuario','$this->id_usu')";
+      var_dump($sql);
       $dev = true;
       try{
         $conexion->query($sql);
@@ -68,12 +87,12 @@
       return $dev;
     }
 
-    public function buscarPass(){
+    public function buscarpass_usu(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
-      $sql = "SELECT pass FROM usuarios WHERE email='$this->email'";
+      $sql = "SELECT pass_usu FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
       if($res->num_rows > 0){
-        $dev = $res->fetch_assoc()['pass'];
+        $dev = $res->fetch_assoc()['pass_usu'];
       }else{
         $dev = false;
       }
@@ -82,12 +101,12 @@
       return $dev;
     }
 
-    public function buscarTipoUsuario(){
+    public function buscartipo_usuUsuario(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
-      $sql = "SELECT tipoUsr FROM usuarios WHERE email='$this->email'";
+      $sql = "SELECT tipo_usuUsr FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
       if($res->num_rows > 0){
-        $dev = $res->fetch_assoc()['tipoUsr'];
+        $dev = $res->fetch_assoc()['tipo_usuUsr'];
       }else{
         $dev = false;
       }
