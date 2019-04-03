@@ -16,6 +16,7 @@
       $this->nombre_usuario=$nombre_usuario;
       $this->id_usu=$dni;
     }
+   
    //Metodos para conseguir los datos que quiera
     function getEmail(){
       return $this->email;
@@ -58,11 +59,12 @@
     function setTipo_usu($tipo_usuario){
       $this->tipo_usuario = $tipo_usuario;
     }
+    
 
     public function altaUsuario(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
       $sql = "INSERT INTO usuarios VALUES('$this->email', '$this->pass_usu', '$this->tipo_usuario','$this->id_usu','$this->nombre','$this->nombre_usuario')";
-      var_dump($sql);
+      
       $dev = true;
       try{
         $conexion->query($sql);
@@ -87,7 +89,7 @@
       return $dev;
     }
 
-    public function buscarpass_usu(){
+    public function buscarPass_usu(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
       $sql = "SELECT pass_usu FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
@@ -101,12 +103,13 @@
       return $dev;
     }
 
-    public function buscartipo_usuUsuario(){
+    public function buscarTipo_usuario(){
       $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
-      $sql = "SELECT tipo_usuUsr FROM usuarios WHERE email='$this->email'";
+      $sql = "SELECT tipo_usuario FROM usuarios WHERE email='$this->email'";
       $res = $conexion->query($sql);
       if($res->num_rows > 0){
-        $dev = $res->fetch_assoc()['tipo_usuUsr'];
+        $dev = $res->fetch_assoc()['tipo_usuario'];
+     
       }else{
         $dev = false;
       }

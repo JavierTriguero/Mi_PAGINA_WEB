@@ -10,22 +10,21 @@
   session_start();
 /*PARA ACCEDER CON TU CUENTA DE USUARIO*/
   if(isset($_POST['acceder'])){
-		//TE QUEDA MOFICAR ACCEDER
-    $email = $_POST['email'];
+	
+  $email = $_POST['email'];
 	$pass = $_POST['pass'];
-	$nombre = $_POST['nombre'];
-	$nombre_usuario=$_POST['nombre_usuario'];
-	$id=$_POST['dni'];
-    $usuario = new Usuario($email, $pass,$nombre,$nombre_usuario,$id);
+
+    $usuario = new Usuario($email, $pass,"","","");
     $emailUsr = $usuario->buscarUsuario();
-    $passUsr = $usuario->buscarPass();
-		$tipoUsr = $usuario->buscarTipoUsuario();
+    $passUsr = $usuario->buscarPass_usu();
+		$tipoUsr = $usuario->buscartipo_usuario();
+		
     if($emailUsr != false){
       if($email == $emailUsr && $pass == $passUsr){
         $_SESSION['email'] = $email;
         $_SESSION['pass'] = $pass;
 				$_SESSION['tipoUsr'] = $tipoUsr;
-				$usuario->setTipo($tipoUsr);
+				$usuario->setTipo_usu($tipoUsr);
       }else{
 				unset($usuario);
 			}
@@ -61,7 +60,7 @@
 				$msg = "Las contraseñas no coinciden";
 			}else{	
 				$usuario = new Usuario($email,$pass1,$nombre,$nombre_usuario,$id);
-				$usuario->setTipo_usu('usuario');
+				$usuario->setTipo_usu('Administrador');
 				if($usuario->buscarUsuario() != $email){
 					$usuario->altaUsuario();
 				}else{
