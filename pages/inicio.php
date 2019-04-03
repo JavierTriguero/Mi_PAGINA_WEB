@@ -8,9 +8,9 @@
   <link rel="stylesheet" type="text/css" href="./style/inicio.css">
 </head>
 <body>
-  <span class='titulo'>ALUMNOS</span>
+  <span class='titulo'>TU RESERVA</span>
   <div id="inicio">
-    <span>PÁGINA DE INICIO ALUMNOS</span>
+    <span>REALIZAR AHORA TÚ RESERVA</span>
   </div>
 </body>
 </html>

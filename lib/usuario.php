@@ -8,13 +8,10 @@
     private $nombre_usuario;
 
 
-    function __construct($email,$pass_usu,$nombre,$nombre_usuario,$dni){
+    function __construct($email,$pass_usu){
       $this->email = $email;
       $this->pass_usu = $pass_usu;
-      $this->tipo_usu="";
-      $this->nombre = $nombre;
-      $this->nombre_usuario=$nombre_usuario;
-      $this->id_usu=$dni;
+     
     }
    
    //Metodos para conseguir los datos que quiera
@@ -30,17 +27,19 @@
       return $this->tipo_usu;
     }
     function getID(){
-      return $this->id;
+      return $this->id_usu;
     }
     function getNombre(){
+  
       return $this->nombre;
+      
     }
     function getnombre_usu(){
       return $this->nombre_usuario;
     }
      //Metodos para asignar los datos que quiera
     function setID($id_usu){
-      $this->id=$id_usu;
+      $this->id_usu=$id_usu;
     } 
     function setNombre($nombre){
       $this->nombre=$nombre;

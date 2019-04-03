@@ -10,11 +10,11 @@
   session_start();
 /*PARA ACCEDER CON TU CUENTA DE USUARIO*/
   if(isset($_POST['acceder'])){
-	
   $email = $_POST['email'];
 	$pass = $_POST['pass'];
 
-    $usuario = new Usuario($email, $pass,"","","");
+		$usuario = new Usuario($email,$pass);
+	
     $emailUsr = $usuario->buscarUsuario();
     $passUsr = $usuario->buscarPass_usu();
 		$tipoUsr = $usuario->buscartipo_usuario();
@@ -25,42 +25,58 @@
         $_SESSION['pass'] = $pass;
 				$_SESSION['tipoUsr'] = $tipoUsr;
 				$usuario->setTipo_usu($tipoUsr);
+				
+		
       }else{
+			
 				unset($usuario);
 			}
     }else{
+			$msg = "El correo existe en la base de datos";
 			unset($usuario);
 		}
   }
-
+//Si existe registro
 	if(isset($_POST['registro'])){
 		$msg = "";
-		if(!empty($_POST['email'])){
+			//Si el campo email
+			if(!empty($_POST['email'])){
 			$email = $_POST['email'];
 		}
-		if(!empty($_POST['pass'])){
+			//Si el campo pass no esta vacío
+			if(!empty($_POST['pass'])){
 			$pass1 = $_POST['pass'];
 		}
-		if(!empty($_POST['repetirPass'])){
+			//Si el campo repetirPass no esta vacío
+			if(!empty($_POST['repetirPass'])){
 			$pass2 = $_POST['repetirPass'];
 		}
-		if(!empty($_POST['nombre'])){
+			//Si el campo nombre no esta vacío
+			if(!empty($_POST['nombre'])){
 			$nombre=$_POST['nombre'];
 		}
-		if(!empty($_POST['nombre_usuario'])){
+			//Si el campo nombre_usuario NO esta vacío
+			if(!empty($_POST['nombre_usuario'])){
 			$nombre_usuario=$_POST['nombre_usuario'];
 		}
-		if(!empty($_POST['dni'])){
+			//Si el campo dni NO esta vacío
+			if(!empty($_POST['dni'])){
 			$id=$_POST['dni'];
 		}
+		//Si alguno de los campos está vacío
 		if(empty($_POST['email']) || empty($_POST['pass']) || empty($_POST['repetirPass']) || empty($_POST['nombre']) || empty($_POST['nombre_usuario']) || empty($_POST['dni'])){
 			$msg = "Algún campo no ha sido rellenado";
 		}else{
+			//Si las contraseñas no coinciden
 			if($pass1 != $pass2){
 				$msg = "Las contraseñas no coinciden";
 			}else{	
-				$usuario = new Usuario($email,$pass1,$nombre,$nombre_usuario,$id);
+				$usuario = new Usuario($email,$pass1);
+				$usuario->setNombre($nombre);
 				$usuario->setTipo_usu('Administrador');
+				$usuario->setnombre_usu($nombre_usuario);
+				$usuario->setID($id);
+				//Le asigno el tipo_usuario a $usuario
 				if($usuario->buscarUsuario() != $email){
 					$usuario->altaUsuario();
 				}else{
@@ -71,6 +87,7 @@
 	}
 
 	if(isset($_GET['a'])){
+		//Si se le da a desconectar
 		$accion = $_GET['a'];
 		if($accion == "logout"){
 			unset($_SESSION['email']);

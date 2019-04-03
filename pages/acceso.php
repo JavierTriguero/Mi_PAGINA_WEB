@@ -11,6 +11,7 @@
   <span class='titulo'>ALUMNOS</span>
   <form action="index.php?p=acceder" method="post" enctype="multipart/form-data">
     <div id="acceso">
+    
       <table>
         <tr>
           <th colspan=2>ACCEDER</th>
