@@ -29,9 +29,9 @@ if (isset($_POST['acceder'])) {
 			$_SESSION['email'] = $email;
 			$_SESSION['pass'] = $pass;
 			$_SESSION['tipoUsr'] = $tipoUsr;
-			$_SESSION['nombre']=$nombre_perfilUsr;
-			$_SESSION['nombre_usuario']=$nombre_perfilUsr;
-			$_SESSION['dni']=$id_Usr;
+			$_SESSION['nombre'] = $nombre_perfilUsr;
+			$_SESSION['nombre_usuario'] = $nombre_perfilUsr;
+			$_SESSION['dni'] = $id_Usr;
 
 			$usuario->setTipo_usu('administrador');
 		} else {
@@ -41,7 +41,6 @@ if (isset($_POST['acceder'])) {
 	} else {
 		$msg = "El correo existe en la base de datos";
 		unset($usuario);
-	
 	}
 }
 //Si existe registro
@@ -98,13 +97,13 @@ if (isset($_GET['a'])) {
 	//Si se le da a desconectar
 	$accion = $_GET['a'];
 	if ($accion == "logout") {
-		
+
 		unset($_SESSION['email']);
 		unset($_SESSION['pass']);
 		unset($_SESSION['tipoUsr']);
 		unset($_SESSION['nombre']);
 		unset($_SESSION['nombre_usuario']);
-    	unset($_SESSION['dni']);
+		unset($_SESSION['dni']);
 		unset($email);
 		unset($pass);
 		unset($usuario);
@@ -114,7 +113,6 @@ if (isset($_GET['a'])) {
 		unset($nombre_perfilUsr);
 		unset($nombre_Usr);
 		unset($id_Usr);
-	
 	}
 }
 ?>
@@ -141,7 +139,7 @@ if (isset($_GET['a'])) {
 					<div align="right" style="padding:12px;" class="smallwhitetext">Estás conectado como:
 						<?php
 					if ($_SESSION['tipoUsr'] == "usuario") {
-						
+
 						print("Usuario");
 					} else {
 						print("Administrador");
@@ -164,29 +162,32 @@ if (isset($_GET['a'])) {
 		<div id="content" align="center">
 			<div id="menu" align="right">
 				<div align="right" style="width:189px; height:8px;"><img src="images/mnu_topshadow.gif" width="189" height="8" alt="mnutopshadow" /></div>
-				<div id="linksmenu" align="center">
-					<?php
-					if (isset($_SESSION['email'])) {
-					
-						if ($_SESSION['tipoUsr'] == "usuario") { ?>
-							<a href="index.php?p=verAlumnos" title="verAlumnos">VER ALUMNOS</a>
-							<a href="index.php?p=verDetalles" title="verDetalles">VER DETALLES</a>
-								<?php
-						}
-						 if ($_SESSION['tipoUsr'] == "administrador") { ?>
-							<a href="index.php?p=altaAlumno" title="altaAlumno">ALTA ALUMNO</a>
-							<a href="index.php?p=inicio" title="Inicio">INICIO</a>
+					<div id="linksmenu" align="center">
 						<?php
-							
+						if (!isset($_SESSION['email'])) { ?>
+							<a href="index.php?p=acceder" title="Acceder">ACCEDER</a>
+							<a href="index.php?p=registrarse" title="Registrarse">REGISTRARSE</a>
+
+							<?php
+						} else { ?>
+
+
+							<?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
+								<a href="index.php?p=verAlumnos" title="verAlumnos">VER ALUMNOS</a>
+								<a href="index.php?p=verDetalles" title="verDetalles">VER DETALLES</a>
+									<?php
+							}
+							if ($_SESSION['tipoUsr'] == "administrador") { ?>
+								<a href="index.php?p=inicio" title="Inicio">INICIO</a>
+								<a href="index.php?p=altaAlumno" title="altaAlumno">ALTA ALUMNO</a>
+								
+									<?php
+							}
 						}
-					}else{
 						?>
-						<a href="index.php?p=acceder" title="Acceder">ACCEDER</a>
-						<a href="index.php?p=registrarse" title="Registrarse">REGISTRARSE</a>
-						<?php 
-					}
-					?>
-				</div>
-				<div align="right" style="width:189px; height:8px;"><img src="images/mnu_bottomshadow.gif" width="189" height="8" alt="mnubottomshadow" /></div>
+					</div>
+				<div align="right" style="width:189px; height:8px;">
+					<img src="images/mnu_bottomshadow.gif" width="189" height="8" alt="mnubottomshadow" />
+						</div>
 			</div>
 		</div>
