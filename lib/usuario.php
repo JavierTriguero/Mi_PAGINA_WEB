@@ -116,5 +116,47 @@
       Conexion::desconectarBD($conexion);
       return $dev;
     }
+    public function buscarNombre(){
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+      $sql = "SELECT nombre FROM usuarios WHERE email='$this->email'";
+      $res = $conexion->query($sql);
+      if($res->num_rows > 0){
+        $dev = $res->fetch_assoc()['nombre'];
+     
+      }else{
+        $dev = false;
+      }
+      $res->free();
+      Conexion::desconectarBD($conexion);
+      return $dev;
+    }
+    public function buscarNombre_usuario(){
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+      $sql = "SELECT nombre_usuario FROM usuarios WHERE email='$this->email'";
+      $res = $conexion->query($sql);
+      if($res->num_rows > 0){
+        $dev = $res->fetch_assoc()['nombre_usuario'];
+     
+      }else{
+        $dev = false;
+      }
+      $res->free();
+      Conexion::desconectarBD($conexion);
+      return $dev;
+    }
+    public function buscarDNI(){
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+      $sql = "SELECT id_usu FROM usuarios WHERE email='$this->email'";
+      $res = $conexion->query($sql);
+      if($res->num_rows > 0){
+        $dev = $res->fetch_assoc()['id_usu'];
+     
+      }else{
+        $dev = false;
+      }
+      $res->free();
+      Conexion::desconectarBD($conexion);
+      return $dev;
+    }
   }
 ?>
