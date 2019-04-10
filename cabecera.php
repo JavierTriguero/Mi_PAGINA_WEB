@@ -6,6 +6,9 @@ session_start();
 require_once("lib/conexion.php");
 require_once("lib/usuario.php");
 require_once("lib/alumno.php");
+require_once("lib/novedad.php");
+require("lib/fecha.php");
+define("ESPERA", 10);
 ?>
 
 <?php
@@ -78,7 +81,7 @@ if (isset($_POST['registro'])) {
 		if ($pass1 != $pass2) {
 			$msg = "Las contraseñas no coinciden";
 		} else {
-			$usuario = new Usuario($email, $pass1);
+			$usuario = new Usuario($email,$pass1);
 			$usuario->setNombre($nombre);
 			$usuario->setTipo_usu('administrador');
 			$usuario->setnombre_usu($nombre_usuario);
@@ -115,6 +118,8 @@ if (isset($_GET['a'])) {
 		unset($id_Usr);
 	}
 }
+
+
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -162,32 +167,32 @@ if (isset($_GET['a'])) {
 		<div id="content" align="center">
 			<div id="menu" align="right">
 				<div align="right" style="width:189px; height:8px;"><img src="images/mnu_topshadow.gif" width="189" height="8" alt="mnutopshadow" /></div>
-					<div id="linksmenu" align="center">
+				<div id="linksmenu" align="center">
+					<?php
+					if (!isset($_SESSION['email'])) { ?>
+						<a href="index.php?p=acceder" title="Acceder">ACCEDER</a>
+						<a href="index.php?p=registrarse" title="Registrarse">REGISTRARSE</a>
+
 						<?php
-						if (!isset($_SESSION['email'])) { ?>
-							<a href="index.php?p=acceder" title="Acceder">ACCEDER</a>
-							<a href="index.php?p=registrarse" title="Registrarse">REGISTRARSE</a>
-
-							<?php
-						} else { ?>
+					} else { ?>
 
 
-							<?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
-								<a href="index.php?p=verAlumnos" title="verAlumnos">VER ALUMNOS</a>
-								<a href="index.php?p=verDetalles" title="verDetalles">VER DETALLES</a>
-									<?php
-							}
-							if ($_SESSION['tipoUsr'] == "administrador") { ?>
-								<a href="index.php?p=inicio" title="Inicio">INICIO</a>
-								<a href="index.php?p=altaAlumno" title="altaAlumno">ALTA ALUMNO</a>
-								
-									<?php
-							}
+						<?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
+							<a href="index.php?p=verNovedades" title="verNovedades">VER NOVEDADES</a>
+							<a href="index.php?p=verDetalles" title="verDetalles">VER DETALLES</a>
+								<?php
 						}
-						?>
-					</div>
+						if ($_SESSION['tipoUsr'] == "administrador") { ?>
+							<a href="index.php?p=inicio" title="Inicio">INICIO</a>
+							<a href="index.php?p=altaAlumno" title="altaAlumno">ALTA ALUMNO</a>
+							<a href="index.php?p=CrearNovedad" title="CrearNovedad">CREAR NOVEDADES</a>
+								<?php
+						}
+					}
+					?>
+				</div>
 				<div align="right" style="width:189px; height:8px;">
 					<img src="images/mnu_bottomshadow.gif" width="189" height="8" alt="mnubottomshadow" />
-						</div>
+				</div>
 			</div>
 		</div>
