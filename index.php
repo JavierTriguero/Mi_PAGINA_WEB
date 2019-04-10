@@ -35,8 +35,8 @@ if (isset($_GET['p'])) {
           include("pages/altaAlumno.php");
         } else if ($pagina == "CrearNovedad") {
           include("pages/CrearNovedad.php");
-        } else if ($pagina == "VerNovedad") {
-          include("pages/VerNovedad.php");
+        } else if ($pagina == "verNovedad") {
+          include("pages/verNovedad.php");
         }
       
       }

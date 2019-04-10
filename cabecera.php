@@ -178,8 +178,10 @@ if (isset($_GET['a'])) {
 
 
 						<?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
-							<a href="index.php?p=verNovedades" title="verNovedades">VER NOVEDADES</a>
+						
 							<a href="index.php?p=verDetalles" title="verDetalles">VER DETALLES</a>
+							<a href="index.php?p=verNovedad" title="verNovedad">NOVEDADES</a>
+
 								<?php
 						}
 						if ($_SESSION['tipoUsr'] == "administrador") { ?>

@@ -10,7 +10,7 @@ class Novedad {
 	
 	public function guardarNovedad(){
 		$msg="";
-		$sql = "insert into comentarios values('$this->texto','$this->fecha')";
+		$sql = "insert into novedades values('$this->texto','$this->fecha')";
 		//echo $sql;
 		$conexion=Conexion::conectarBD("localhost", "root", "", "pollosrufino");
 		if ($conexion->query($sql))
@@ -26,25 +26,25 @@ class Novedad {
 	}
 
 	public static function verNovedad($cuantos,$comienzo){
-		$comentarios=[];
-		$sql="select * from comentarios order by id desc limit $comienzo, $cuantos ";
+		$novedades=[];
+		$sql="select * from novedades order by fecha desc limit $comienzo, $cuantos ";
 		
 		$conexion=Conexion::conectarBD("localhost", "root", "", "pollosrufino");
 		$res=$conexion->query($sql);
 		if ($res->num_rows >0){
 			while ($linea=$res->fetch_assoc()){
-				$comentarios[]=$linea;
+				$novedades[]=$linea;
 			}
 		}
 		$res->free();
 		Conexion::desconectarBD($conexion);
 
-		return $comentarios;
+		return $novedades;
 	}
 
 	public static function totalNovedad(){
 		$total=0;
-		$sql="select count('id') as 'total' from comentarios";
+		$sql="select count('novedad') as 'total' from novedades";
 		$conexion=Conexion::conectarBD("localhost", "root", "", "pollosrufino");
 		$res=$conexion->query($sql);
 		if ($res->num_rows >0)
