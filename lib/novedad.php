@@ -14,9 +14,9 @@ class Novedad {
 		//echo $sql;
 		$conexion=Conexion::conectarBD("localhost", "root", "", "pollosrufino");
 		if ($conexion->query($sql))
-			$msg="Comentario guardado correctamente";
+			$msg="Novedad publicada correctamente";
 		else{
-			$msg="Error al guardar el comentario";
+			$msg="Error al publicar la novedad";
 			$msg.= $conexion->error;
 		}
 		Conexion::desconectarBD($conexion);
@@ -25,9 +25,9 @@ class Novedad {
 
 	}
 
-	public static function verNovedad($cuantos,$comienzo){
+	public static function verNovedad(){
 		$novedades=[];
-		$sql="select * from novedades order by fecha desc limit $comienzo, $cuantos ";
+		$sql="select * from novedades order by fecha";
 		
 		$conexion=Conexion::conectarBD("localhost", "root", "", "pollosrufino");
 		$res=$conexion->query($sql);

@@ -83,7 +83,7 @@ if (isset($_POST['registro'])) {
 		} else {
 			$usuario = new Usuario($email,$pass1);
 			$usuario->setNombre($nombre);
-			$usuario->setTipo_usu('administrador');
+			$usuario->setTipo_usu('usuario');
 			$usuario->setnombre_usu($nombre_usuario);
 			$usuario->setID($id);
 			//Le asigno el tipo_usuario a $usuario
@@ -179,15 +179,16 @@ if (isset($_GET['a'])) {
 
 						<?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
 						
-							<a href="index.php?p=verDetalles" title="verDetalles">VER DETALLES</a>
-							<a href="index.php?p=verNovedad" title="verNovedad">NOVEDADES</a>
-
+							<a href="index.php?p=verNovedad" title="verNovedad"> VER NOVEDADES</a>
+							<a href="index.php?p=realizarPedido" title="realizarPedido"> REALIZAR PEDIDO</a>
 								<?php
 						}
 						if ($_SESSION['tipoUsr'] == "administrador") { ?>
 							<a href="index.php?p=inicio" title="Inicio">INICIO</a>
-							<a href="index.php?p=altaAlumno" title="altaAlumno">ALTA ALUMNO</a>
 							<a href="index.php?p=CrearNovedad" title="CrearNovedad">CREAR NOVEDADES</a>
+							<a href="index.php?p=altaProducto" title="altaProducto">ALTA PRODUCTO</a>
+							<a href="index.php?p=modificarProducto" title="modificarProducto">MODIFICAR PRODUCTO</a>
+							<a href="index.php?p=borrarProducto" title="borrarProducto">BORRAR PRODUCTO</a>
 								<?php
 						}
 					}

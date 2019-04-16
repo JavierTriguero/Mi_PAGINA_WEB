@@ -1,28 +1,14 @@
 <?php
-$comienzo=0;
-if(isset($_GET['comienzo'])){
-  $comienzo= $_GET['comienzo'];
+function verNovedad(){
+  $sql="select * from novedades order by fecha";
+  $conexion=Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+  $res=$conexion->query($sql);
+  //$res->free();
+  Conexion::desconectarBD($conexion);
+  return $res;
 }
-	define("COMENTxPAG", 5);
-  $total=Novedad::totalNovedad();
-  $novedad=Novedad::verNovedad(COMENTxPAG,$comienzo);
-  $cuantos=count($novedad);
- 
-  for($cont=0;$cont<$cuantos;$cont++){
-      $novedad = $novedad[$cont]['novedad'];
-      $fecha=$novedad[$cont]['fecha'];
-      $entrada="Esta novedad fue escrita por el ADMINISTRADOR del sitio FECHA: <i>$fecha</i>:NOVEDAD<br>$novedad</p>\n";  
-      echo $entrada;    
-  }
-  if ($total>5){
-    if ($comienzo+COMENTxPAG< $total){
-        $comienzo=$comienzo+COMENTxPAG;
-        $verAnteriores="<a href='".$_SERVER['PHP_SELF']."?comienzo=$comienzo'>Ver Anteriores </a>";
-    }
-    else
-        $verAnteriores="";
-    echo "<br><br> $verAnteriores &nbsp;&nbsp;<a href='{$_SERVER['PHP_SELF']}'>Volver Principio </a>";
-  }
+$consulta=verNovedad();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -38,10 +24,30 @@ if(isset($_GET['comienzo'])){
 <body>
 
 	<div id="marco">
-		
-		<h3>Mostrando los novedad <?php echo $comienzo+1 ." a ". (COMENTxPAG+$comienzo)?> desde los más recientes hacia atrás</h3>
+    <?php if ($consulta->num_rows >0){?>
+    <table >
+    <thead>
+    <tr>
+    <th>Novedad</th>
+    <th>Fecha</th>
+      </tr>
+    </thead>
+    <?php 
+    
+    while($novedad=$consulta->fetch_assoc()){
+      ?>
+      <tr>
+        <td width="200px"><?php echo $novedad['novedad']?></td>
+        <td width="200px"><?php echo $novedad['fecha']?></td>
+        <td></td>
+      </tr>
+      <?php
+    }
+  }else {
+    echo "NO HAY NOVEDADES";
+  }
+    ?>
 
-		
 	</div>
 </body>
 

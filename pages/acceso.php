@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="./style/acceso.css">
 </head>
 <body>
-  <span class='titulo'>ALUMNOS</span>
+  <span class='titulo'>INICIAR SESIÓN</span>
   <form action="index.php?p=acceder" method="post" enctype="multipart/form-data">
     <div id="acceso">
     

@@ -23,21 +23,21 @@ if (isset($_GET['p'])) {
       } else {
         if ($pagina == "inicio" || $pagina == "acceder") {
           include("pages/inicio.php");
-        } else if ($pagina == "verAlumnos") {
-          include("pages/verAlumnos.php");
-        } else if ($pagina == "modificarAlumnos") {
-          include("pages/modificarAlumnos.php");
-        } else if ($pagina == "eliminarAlumnos") {
-          include("pages/eliminarAlumnos.php");
-        } else if ($pagina == "verDetalles") {
-          include("pages/verDetalles.php");
-        } else if ($pagina == "altaAlumno") {
-          include("pages/altaAlumno.php");
         } else if ($pagina == "CrearNovedad") {
           include("pages/CrearNovedad.php");
         } else if ($pagina == "verNovedad") {
           include("pages/verNovedad.php");
         }
+        else if ($pagina == "altaProducto") {
+          include("pages/altaProducto.php");
+        }
+        else if ($pagina == "modificarProducto") {
+          include("pages/modificarProducto.php");
+        }
+        else if ($pagina == "borrarProducto") {
+          include("pages/borrarProducto.php");
+        }
+      
       
       }
       ?>
