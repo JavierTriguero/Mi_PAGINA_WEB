@@ -47,4 +47,4 @@ if (isset($_GET['p'])) {
 </div>
 <?php
       include("footer.php");
-      ?>
+?>
