@@ -6,14 +6,14 @@ class Producto extends DBAbstractModel {
 	public $pvp;
 	public $existencias;
 	function __construct() {
-		$this->db_name = 'pollosrufinos';
+		$this->db_name = 'pollosrufino';
 		
 	}
 	
 	public function get_productos(){
 		return $this->rows;
 	}
-	public function get($cod_prod='') {
+	public function get($cod_prod="") {
 		if($cod_prod != ''):
 			$this->query = "
 			SELECT cod_prod,descripcion,pvp,existencias

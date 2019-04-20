@@ -7,6 +7,9 @@ require_once("lib/conexion.php");
 require_once("lib/usuario.php");
 require_once("lib/alumno.php");
 require_once("lib/novedad.php");
+require_once("lib/productos_model.php");
+
+
 require("lib/fecha.php");
 define("ESPERA", 10);
 ?>
@@ -135,7 +138,7 @@ if (isset($_GET['a'])) {
 	<div id="page" align="center">
 		<div id="toppage" align="center">
 			<div id="date">
-				<div class="smalltext" style="padding:13px;"><strong>MIPAGINAWEB</strong></div>
+				<div class="smalltext" style="padding:13px;"><strong>POLLOSRUFINO</strong></div>
 			</div>
 			<div id="topbar">
 				<?php
@@ -145,9 +148,11 @@ if (isset($_GET['a'])) {
 						<?php
 					if ($_SESSION['tipoUsr'] == "usuario") {
 
-						print("Usuario");
+						
+						print($_SESSION['nombre_usuario']);
 					} else {
-						print("Administrador");
+						
+						print($_SESSION['nombre_usuario']);
 					}
 					?>
 					| <a href="index.php?a=logout">Desconectar</a></div>
@@ -178,8 +183,11 @@ if (isset($_GET['a'])) {
 
 
 						<?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
-						
+							<a href="index.php?p=inicio" title="Inicio">INICIO</a>
 							<a href="index.php?p=verNovedad" title="verNovedad"> VER NOVEDADES</a>
+							<a href="index.php?p=verPerfil" title="verPerfil"> VER PERFIL</a>
+							<a href="index.php?p=modificarPerfil" title="modificarPerfil"> MODIFICAR PERFIL</a>
+							
 							<a href="index.php?p=realizarPedido" title="realizarPedido"> REALIZAR PEDIDO</a>
 								<?php
 						}

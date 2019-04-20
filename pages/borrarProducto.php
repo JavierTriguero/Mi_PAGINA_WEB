@@ -14,7 +14,7 @@ if(isset($_POST['borrar_producto'])){
  $producto->get_todos();
  $datos=$producto->get_productos();
 ?>
-<form action="index.php?p=borrar" method="post">
+<form action="index.php?p=borrarProducto" method="post">
 	<table>
 		<tr><td align="right">CODIGO PRODUCTO: </td>
 		<td align="left">

@@ -37,6 +37,12 @@ if (isset($_GET['p'])) {
         else if ($pagina == "borrarProducto") {
           include("pages/borrarProducto.php");
         }
+        else if ($pagina == "modificarPerfil") {
+          include("pages/modificarPerfil.php");
+        }
+        else if ($pagina == "verPerfil") {
+          include("pages/verPerfil.php");
+        }
       
       
       }

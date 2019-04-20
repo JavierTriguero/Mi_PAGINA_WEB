@@ -3,7 +3,7 @@ abstract class DBAbstractModel {
 	private static $db_host = 'localhost';
 	private static $db_user = 'root';
 	private static $db_pass = '';
-	protected $db_name = 'mydb';
+	protected $db_name = 'pollosrufino';
 	protected $query;
 	protected $rows = array();
 	private $conn;
@@ -33,10 +33,12 @@ abstract class DBAbstractModel {
 	protected function get_results_from_query() {
 		$this->open_connection();
 		$result = $this->conn->query($this->query);
-		while ($this->rows[] = $result->fetch_assoc());
+		
+		while ($this->rows[] = $result->fetch_array());
 		$result->close();
 		$this->close_connection();
 		array_pop($this->rows); /*elimina el false del último fetch_assoc, cuando ya no encuentra más resultados*/
+	
 	}
 }
 ?>
