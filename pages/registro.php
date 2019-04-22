@@ -23,7 +23,7 @@
                         <label>Nombre:</label>
                     </td>
                     <td>
-                        <input type="text" name="nombre">
+                        <input type="text" name="nombre" id="nombre"required>
                     </td>
                 </tr>
                 <tr>
@@ -31,7 +31,7 @@
                         <label>DNI:</label>
                     </td>
                     <td>
-                        <input type="text" name="dni">
+                        <input type="text" name="dni" id="dni"required>
                     </td>
                 </tr>
                 <tr>
@@ -39,7 +39,7 @@
                         <label>Nombre usuario:</label>
                     </td>
                     <td>
-                        <input type="text" name="nombre_usuario">
+                        <input type="text" name="nombre_usuario" id="nombre_usuario"required>
                     </td>
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
                         <label>E-MAIL:</label>
                     </td>
                     <td>
-                        <input type="text" name="email">
+                        <input type="text" name="email" id="email" required>
                     </td>
                 </tr>
                 <tr>
@@ -55,7 +55,7 @@
                         <label>CONTRASEÑA:</label>
                     </td>
                     <td>
-                        <input type="password" name="pass">
+                        <input type="password" name="pass" id="pass" required>
                     </td>
                 </tr>
                 <tr>
@@ -63,7 +63,7 @@
                         <label>REPETIR CONTRASEÑA:</label>
                     </td>
                     <td>
-                        <input type="password" name="repetirPass">
+                        <input type="password" name="repetirPass" id="repetirPass" required>
                     </td>
                 </tr>
                 <tr>
