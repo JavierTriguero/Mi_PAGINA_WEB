@@ -175,6 +175,7 @@ if (isset($_GET['a'])) {
 				<div id="linksmenu" align="center">
 					<?php
 					if (!isset($_SESSION['email'])) { ?>
+						<a href="index.php?p=galeria_productos" title="galeria">Galeria</a>						
 						<a href="index.php?p=acceder" title="Acceder">ACCEDER</a>
 						<a href="index.php?p=registrarse" title="Registrarse">REGISTRARSE</a>
 

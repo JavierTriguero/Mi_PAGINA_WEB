@@ -44,8 +44,12 @@ if (isset($_GET['p'])) {
           include("pages/verPerfil.php");
         }
         else if ($pagina == "formulariosugerencias") {
-          include("pages/formulariocontacto.html");
+          include("pages/formulariocontacto.php");
         }
+        else if ($pagina == "galeriaproducto") {
+          include("pages/galeria_prductos.php");
+        }
+      
       
       
       }
