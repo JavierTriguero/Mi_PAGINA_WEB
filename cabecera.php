@@ -188,7 +188,7 @@ if (isset($_GET['a'])) {
 							<a href="index.php?p=verNovedad" title="verNovedad"> VER NOVEDADES</a>
 							<a href="index.php?p=verPerfil" title="verPerfil"> VER PERFIL</a>
 							<a href="index.php?p=modificarPerfil" title="modificarPerfil"> MODIFICAR PERFIL</a>
-							<a href="index.php?p=formulariosugerencias"  title="modificarPerfil">SUGERENCIAS</a>
+							<a href="index.php?p=formulariosugerencias"  title="Sugerencia">SUGERENCIAS</a>
 							<a href="index.php?p=realizarPedido" title="realizarPedido"> REALIZAR PEDIDO</a>
 						<?php
 						}

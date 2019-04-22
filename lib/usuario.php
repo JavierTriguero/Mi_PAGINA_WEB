@@ -158,5 +158,34 @@
       Conexion::desconectarBD($conexion);
       return $dev;
     }
+    public function modificarDNI(){
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+      $sql = "UPDATE usuarios
+			        SET id_usu='$this->id_usu',
+                  nombre_usuario='$this->nombre_usuario',
+                  nombre='$this->nombre',
+                  email='$this->email',
+                  pass_usu='$this->pass'
+			        WHERE email = '$this->email'";
+      $res = $conexion->query($sql);
+      $res->free();
+      Conexion::desconectarBD($conexion);
+     
+    }
+    public function modificarUsuario(){
+      $conexion = Conexion::conectarBD("localhost", "root", "", "pollosrufino");
+      $sql = "UPDATE usuarios
+			        SET id_usu='$this->id_usu',
+                  nombre_usuario='$this->nombre_usuario',
+                  nombre='$this->nombre'
+                  email='$this->email'
+                  pass_usu='$this->pass'
+			        WHERE email = '$this->email'";
+      $res = $conexion->query($sql);
+      $res->free();
+      Conexion::desconectarBD($conexion);
+     
+    }
   }
+ 
 ?>
