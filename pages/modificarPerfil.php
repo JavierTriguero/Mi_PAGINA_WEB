@@ -1,27 +1,35 @@
 <?php 
 if(isset($_POST['modificar'])){
+    //Datos usuario
+    $msg="Se ha modificado:\n ";
+    if($_SESSION['pass']!=$_POST['pass']){
+        //Cabiamos las variables de la sesión por las del $_POST
+        $_SESSION['pass']=$_POST['pass'];
+        $msg=$msg."<br> la Contraseña";
+    }
+    if($_SESSION['nombre']!=$_POST['nombre']){
+        //Cabiamos las variables de la sesión por las del $_POST
+        $_SESSION['nombre']=$_POST['nombre'];
+        $msg=$msg."<br> el Nombre";
+    }
+    if($_SESSION['nombre_usuario']!=$_POST['nombre_usuario']){
+        //Cabiamos las variables de la sesión por las del $_POST
+        $_SESSION['nombre_usuario']=$_POST['nombre_usuario'];
+        $msg=$msg."<br> Nombre de usuario";
+
+    }
+    if($_SESSION['dni']!=$_POST['dni']){
+        //Cabiamos las variables de la sesión por las del $_POST
+        $_SESSION['dni']=$_POST['dni'];
+        $msg=$msg."<br> DNI";
+    }
+  
     $usuario=new Usuario($_SESSION['email'],$_SESSION['pass']);
     $usuario->setNombre($_SESSION['nombre']);
     $usuario->setTipo_usu($_SESSION['tipoUsr']);
     $usuario->setnombre_usu($_SESSION['nombre_usuario']);
     $usuario->setID($_SESSION['dni']);
-    if($_SESSION['email']!=$_POST['email']){
-        $_SESSION['email']=$_POST['email'];
-    }
-    if($_SESSION['pass']!=$_POST['pass']){
-        $_SESSION['pass']=$_POST['pass'];
-    }
-    if($_SESSION['nombre']!=$_POST['nombre']){
-        $_SESSION['nombre']=$_POST['nombre'];
-    }
-    if($_SESSION['nombre_usuario']!=$_POST['nombre_usuario']){
-        $_SESSION['nombre_usuario']=$_POST['nombre_usuario'];
-    }
-    if($_SESSION['dni']!=$_POST['dni']){
-        $_SESSION['dni']=$_POST['dni'];
-    }
-    
-
+    $usuario->modificarUsuario();
 }
 
 
@@ -40,7 +48,7 @@ if(isset($_POST['modificar'])){
 </head>
 
 <body>
-    <span class="titulo">Modificar perfil de <?php $_SESSION['nombre']?></span>
+    <span class="titulo">Modificar perfil de <?php print( $_SESSION['nombre']);?></span>
     <form action="index.php?p=modificarPerfil" method="post" enctype="multipart/form-data">
         <div id="registro">
             <table>
@@ -74,18 +82,10 @@ if(isset($_POST['modificar'])){
                 </tr>
                 <tr>
                     <td>
-                        <label>E-MAIL:</label>
+                        <label>Contraseña</label>
                     </td>
                     <td>
-                        <input type="text" name="email" id="email" >
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>CONTRASEÑA:</label>
-                    </td>
-                    <td>
-                        <input type="password" name="pass" id="pass" >
+                        <input type="password" name="pass" id="pass">
                     </td>
                 </tr>
                 <tr>
