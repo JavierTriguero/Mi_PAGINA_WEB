@@ -1,7 +1,7 @@
 <?php 
 if(isset($_POST['modificar'])){
     //Datos usuario
-    $msg="Se ha modificado:\n ";
+    $msg="Se ha modificado:<bt> ";
     if($_SESSION['pass']!=$_POST['pass']){
         //Cabiamos las variables de la sesión por las del $_POST
         $_SESSION['pass']=$_POST['pass'];
