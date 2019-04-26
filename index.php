@@ -49,8 +49,8 @@ if (isset($_GET['p'])) {
         else if ($pagina == "galeriaproducto") {
           include("pages/galeria_prductos.php");
         }
-        else if ($pagina == "realizarReserva") {
-          include("pages/realizarReserva.php");
+        else if ($pagina == "compra") {
+          include("pages/compra.php");
         }
         
       

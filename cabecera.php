@@ -103,7 +103,7 @@ if (isset($_GET['a'])) {
 	//Si se le da a desconectar
 	$accion = $_GET['a'];
 	if ($accion == "logout") {
-
+		unset($_SESSION['cart']);
 		unset($_SESSION['email']);
 		unset($_SESSION['pass']);
 		unset($_SESSION['tipoUsr']);
@@ -189,7 +189,7 @@ if (isset($_GET['a'])) {
 							<a href="index.php?p=verPerfil" title="verPerfil"> VER PERFIL</a>
 							<a href="index.php?p=modificarPerfil" title="modificarPerfil"> MODIFICAR PERFIL</a>
 							<a href="index.php?p=formulariosugerencias"  title="Sugerencia">SUGERENCIAS</a>
-							<a href="index.php?p=realizarReserva" title="realizarPedido"> REALIZAR RESERVA</a>
+							<a href="index.php?p=compra" title="compra"> REALIZAR RESERVA</a>
 						<?php
 						}
 						if ($_SESSION['tipoUsr'] == "administrador") { ?>
