@@ -1,10 +1,12 @@
 <?php 
-require_once("lib/conexion.php");
 
+    session_start();
+  
+    require("include/connection.php"); 
     $server="localhost"; 
-    $user="root"; 
-    $pass=""; 
-    $db="pollosrufino"; 
+    $user="tutorial"; 
+    $pass="supersecretpassword"; 
+    $db="tutorials"; 
 
     if(isset($_GET['page'])){ 
           
@@ -26,15 +28,7 @@ require_once("lib/conexion.php");
           
     } 
 ?>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-  <h1>Cart</h1> 
+<h1>Carrito</h1> 
 <?php 
   
     if(isset($_SESSION['cart'])){ 
@@ -47,32 +41,25 @@ require_once("lib/conexion.php");
           
         $sql=substr($sql, 0, -1).") ORDER BY name ASC"; 
         $res=$mysqli->query($sql);
-        if($res!=false){
         while($row=$res->fetch_assoc()){ 
               
         ?> 
-            <p><?php echo $row['cod_prod'] ?> x <?php echo $_SESSION['cart'][$row['id_product']]['quantity'] ?></p> 
+            <p><?php echo $row['name'] ?> x <?php echo $_SESSION['cart'][$row['id_product']]['quantity'] ?></p> 
         <?php 
               
-        }
-    }else{
-        print("El carro esta vacío");
-    } 
+        } 
     ?> 
         <hr /> 
-        <a href="index.php?p=compra&page=cart">Go to cart</a> 
+        <a href="index.php?page=cart">Ir al carrito</a> 
     <?php 
           
     }else{ 
           
-        echo "<p>Your Cart is empty. Please add some products.</p>"; 
+        echo "<p>Tu carrito esta vacío.Por favor añade algún producto.</p>"; 
           
     } 
   
-?>  
-</body>
-</html>
-
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -80,9 +67,9 @@ require_once("lib/conexion.php");
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="style/estiloproducto.css">
+    <link rel="stylesheet" href="/style/style.css">
 
-    <title>Shopping cart</title>
+    <title>Carrito de la reserva</title>
 
 </head>
 
@@ -91,11 +78,11 @@ require_once("lib/conexion.php");
     <div id="container">
 
         <div id="main">
-        <?php require("$_page".".php"); ?>
+        <?php require($_page.".php"); ?>
         </div><!--end main-->
         
         <div id="sidebar">
-       
+       <a href="../../index.php?p=inicio">Volver al principio</a>
         </div><!--end sidebar-->
 
     </div><!--end container-->

@@ -10,7 +10,7 @@
               
         }else{ 
             $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
-            $sql="SELECT * FROM productos
+            $sql="SELECT * FROM products 
                 WHERE id_product={$id}"; 
             $res=$mysqli->query($sql);
             if($res->num_rows > 0){ 
@@ -18,9 +18,9 @@
                  
                $_SESSION['cart'][$result['id_product']]=array( 
                         "quantity" => 1, 
-                        "price" => $result['pvp'] 
+                        "price" => $result['price'] 
                     ); 
-              
+                //  var_dump($_SESSION['cart'][$result['id_product']]);
                 
                   
             }else{ 
@@ -41,7 +41,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Productos</title>
    
 </head>
 
@@ -54,24 +55,25 @@
 ?>
     <table>
         <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
+            <th>Nombre </th>
+            <th>Descripcion</th>
             <th>Precio</th>
-            <th>Añadir al carro</th>
+            <th>Acción</th>
         </tr>
         <?php 
   
    $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
-    $sql="SELECT * FROM productos ORDER BY cod_prod ASC"; 
+    $sql="SELECT * FROM products ORDER BY name ASC"; 
     $res=$mysqli->query($sql); 
+      
     while ($f=$res->fetch_assoc()) { 
           
 ?> 
         <tr> 
-            <td><?php echo $f['cod_prod'] ?></td> 
-            <td><?php echo $f['descripcion'] ?></td> 
-            <td><?php echo $f['pvp'] ?>$</td> 
-            <td><a href="index.php?p=compra&page=products&action=add&id=<?php echo $f['id_product'] ?>">Add to cart</a></td> 
+            <td><?php echo $f['name'] ?></td> 
+            <td><?php echo $f['description'] ?></td> 
+            <td><?php echo $f['price'] ?>$</td> 
+            <td><a href="index.php?page=products&action=add&id=<?php echo $f['id_product'] ?>">Añadir al carrito</a></td> 
         </tr> 
 <?php 
           

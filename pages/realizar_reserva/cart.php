@@ -1,5 +1,7 @@
 <?php 
- 
+if(isset($_POST['pdf'])){
+echo "<p>HOLA</p>";
+}
 if(isset($_POST['submit'])){ 
   
     foreach($_POST['quantity'] as $key => $val) { 
@@ -23,9 +25,9 @@ if(isset($_POST['submit'])){
     <title>Carrito</title>
 </head>
 <body>
-<h1>View cart</h1> 
-<a href="index.php?p=compra&page=products">Go back to products page</a> 
-<form method="post" action="index.php?p=compra&page=cart"> 
+<h1>Contenido pedido</h1> 
+<a href="index.php?page=products"> Volver a la página de productos</a> 
+<form method="post" action="index.php?page=cart"> 
       
     <table> 
           
@@ -33,7 +35,7 @@ if(isset($_POST['submit'])){
             <th>Nombre</th> 
             <th>Cantidad</th> 
             <th>Precio</th> 
-            <th>Precio del Producto</th> 
+            <th>Precio * Cantidad</th> 
         </tr> 
           
         <?php 
@@ -46,7 +48,8 @@ if(isset($_POST['submit'])){
                       
                     $sql=substr($sql, 0, -1).") ORDER BY name ASC"; 
                     $res=$mysqli->query($sql);  
-                    $totalprice=0; 
+                    $totalprice=0;
+                     
                     while($row=$res->fetch_assoc()){ 
                         $subtotal=$_SESSION['cart'][$row['id_product']]['quantity']*$row['price']; 
                         $totalprice+=$subtotal; 
@@ -62,14 +65,16 @@ if(isset($_POST['submit'])){
                     } 
         ?> 
                     <tr> 
-                        <td colspan="4">Total Price: <?php echo $totalprice ?>$</td> 
+                        <td colspan="4">Precio total: <?php echo $totalprice ?>$</td> 
                     </tr> 
           
     </table> 
     <br /> 
-    <button type="submit" name="submit">Update Cart</button> 
+    
+    <button type="submit" name="submit">Actualizar Carrito</button> 
+    <a href="generarpdf.php">Generar pdf</a>
 </form> 
 <br /> 
-<p>To remove an item, set it's quantity to 0. </p>   
+<p>Para eliminar un producto de tu reserva,pon a 0 la cantidad</p>   
 </body>
 </html>
