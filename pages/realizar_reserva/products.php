@@ -10,7 +10,7 @@
               
         }else{ 
             $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
-            $sql="SELECT * FROM products 
+            $sql="SELECT * FROM productos 
                 WHERE id_product={$id}"; 
             $res=$mysqli->query($sql);
             if($res->num_rows > 0){ 
@@ -18,7 +18,7 @@
                  
                $_SESSION['cart'][$result['id_product']]=array( 
                         "quantity" => 1, 
-                        "price" => $result['price'] 
+                        "price" => $result['pvp'] 
                     ); 
                 //  var_dump($_SESSION['cart'][$result['id_product']]);
                 
@@ -63,16 +63,16 @@
         <?php 
   
    $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
-    $sql="SELECT * FROM products ORDER BY name ASC"; 
+    $sql="SELECT * FROM productos ORDER BY cod_prod ASC"; 
     $res=$mysqli->query($sql); 
       
     while ($f=$res->fetch_assoc()) { 
           
 ?> 
         <tr> 
-            <td><?php echo $f['name'] ?></td> 
-            <td><?php echo $f['description'] ?></td> 
-            <td><?php echo $f['price'] ?>$</td> 
+            <td><?php echo $f['cod_prod'] ?></td> 
+            <td><?php echo $f['descripcion'] ?></td> 
+            <td><?php echo $f['pvp'] ?>$</td> 
             <td><a href="index.php?page=products&action=add&id=<?php echo $f['id_product'] ?>">Añadir al carrito</a></td> 
         </tr> 
 <?php 

@@ -1,12 +1,12 @@
 <?php 
 
     session_start();
-  
+    define ("CLAVE", "m._cl22@ddDPZ_ffDcc1!23ss");
     require("include/connection.php"); 
     $server="localhost"; 
-    $user="tutorial"; 
-    $pass="supersecretpassword"; 
-    $db="tutorials"; 
+    $user="root"; 
+    $pass=""; 
+    $db="pollosrufino"; 
 
     if(isset($_GET['page'])){ 
           
@@ -33,18 +33,18 @@
   
     if(isset($_SESSION['cart'])){ 
         $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
-        $sql="SELECT * FROM products WHERE id_product IN ("; 
+        $sql="SELECT * FROM productos WHERE id_product IN ("; 
 
         foreach($_SESSION['cart'] as $id => $value) { 
             $sql.=$id.","; 
         } 
           
-        $sql=substr($sql, 0, -1).") ORDER BY name ASC"; 
+        $sql=substr($sql, 0, -1).") ORDER BY cod_prod ASC"; 
         $res=$mysqli->query($sql);
         while($row=$res->fetch_assoc()){ 
               
         ?> 
-            <p><?php echo $row['name'] ?> x <?php echo $_SESSION['cart'][$row['id_product']]['quantity'] ?></p> 
+            <p><?php echo $row['cod_prod'] ?> x <?php echo $_SESSION['cart'][$row['id_product']]['quantity'] ?></p> 
         <?php 
               
         } 

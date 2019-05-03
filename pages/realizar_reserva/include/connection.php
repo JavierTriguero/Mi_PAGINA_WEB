@@ -1,4 +1,9 @@
 <?php 
+    $server="localhost"; 
+    $user="root"; 
+    $pass=""; 
+    $db="pollosrufino"; 
+
   class Conexion{
 
     public static function conectarBD($servidor, $usuario, $pass, $bd){
