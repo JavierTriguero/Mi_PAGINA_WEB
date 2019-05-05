@@ -1,5 +1,5 @@
 <?php 
-  
+
     if(isset($_GET['action']) && $_GET['action']=="add"){ 
           
         $id=intval($_GET['id']); 
@@ -7,7 +7,6 @@
         if(isset($_SESSION['cart'][$id])){ 
               
             $_SESSION['cart'][$id]['quantity']++; 
-              
         }else{ 
             $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
             $sql="SELECT * FROM productos 
@@ -60,8 +59,9 @@
             <th>Precio</th>
             <th>Acción</th>
         </tr>
+      <a href="index.php?page=cart">Ver carrito</a>
+
         <?php 
-  
    $mysqli=Conexion::conectarBD($server,$user,$pass,$db);
     $sql="SELECT * FROM productos ORDER BY cod_prod ASC"; 
     $res=$mysqli->query($sql); 
@@ -72,8 +72,8 @@
         <tr> 
             <td><?php echo $f['cod_prod'] ?></td> 
             <td><?php echo $f['descripcion'] ?></td> 
-            <td><?php echo $f['pvp'] ?>$</td> 
-            <td><a href="index.php?page=products&action=add&id=<?php echo $f['id_product'] ?>">Añadir al carrito</a></td> 
+            <td><?php echo $f['pvp'] ?>€</td> 
+            <td><a onclick="alert('Se ha añadido el producto a tú reserva');" href="index.php?page=products&action=add&id=<?php echo $f['id_product'] ?>">Añadir al carrito</a></td> 
         </tr> 
 <?php 
           
@@ -81,6 +81,7 @@
   Conexion::desconectarBD($res);
 ?>
     </table>
+ 
 </body>
 
 </html>
