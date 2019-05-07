@@ -20,8 +20,8 @@ if (isset($_POST['publicar'])) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" type="text/css" href="./style/master.css">
-	<link rel="stylesheet" type="text/css" href="./style/alta_modificar_borrar_Alumnos.css">
+<!--	<link rel="stylesheet" type="text/css" href="./style/master.css">
+	<link rel="stylesheet" type="text/css" href="./style/alta_modificar_borrar_Alumnos.css">-->
 </head>
 
 <body>
@@ -32,7 +32,7 @@ if (isset($_POST['publicar'])) {
 		<p><?php echo "$msg" ?></p>
 		<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 			NOVEDAD:<br>
-			<textarea cols="55" rows="4" name="texto"></textarea><br>
+			<textarea style="resize:none;" cols="55" rows="4" name="texto"></textarea><br>
 
 			<input type="submit" value="Publicar" name="publicar">
 		</form>

@@ -1,6 +1,4 @@
-<html>
- 
-        <head>
+
          
         <script type="text/javascript">
         
@@ -21,29 +19,19 @@
           }
          
         }
+        
         </script>
-         
-         
-        </head>
-         
-         
-        <body>
-         <h3>Formulario de Sugerencias</h3>
+        <h3>Formulario de Sugerencias</h3>
         <form id="form1" name="form1" action="./pages/mail.php" method="POST">
          <p>
-             Correo electrónico: <input type="email" name="mail" id="mail"  pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required >
+             Correo electrónico: <input type="email" name="mail" id="mail" value="tienda_pollos@gmail.com" readonly >
         </p>
             Sugerencia: 
             <p>
-                <textarea style="resize:none;" maxlength="50" name="com" id="com" cols="30" rows="10">
+                <textarea placeholder="Escribe aquí tú sugerencía" style="resize:none;" name="com" id="com" cols="25" rows="5" ></textarea>
 
-                </textarea>
-            <p> Aceptas los terminos y condiciones de uso de tus datos.    <input type="checkbox" name="condicion" id="condicion" onclick="checkifempty()" required/></p> 
+            <p> Aceptas los terminos y <a href="index.php?p=condiciones">Condiciones de uso de tus datos.</a>    <input type="checkbox" name="condicion" id="condicion" onclick="checkifempty()" required/></p> 
 
         </p>
         <input type="submit" name="registrarse" id="registrarse" disabled="true">
         </form>
-         
-        </body>
-         
-    </html>

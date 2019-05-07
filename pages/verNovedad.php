@@ -10,44 +10,23 @@ function verNovedad(){
 $consulta=verNovedad();
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	
-</head>
-
-<body>
-
-
     <?php if ($consulta->num_rows >0){?>
-    <table >
-    <thead>
-    <tr>
-    <th>Novedad</th>
-    <th>Fecha</th>
-      </tr>
-    </thead>
     <?php 
     
     while($novedad=$consulta->fetch_assoc()){
       ?>
-      <tr>
-        <td width="1000px"><?php echo $novedad['novedad']?></td>
-        <td width="1000x"><?php echo $novedad['fecha']?></td>
-        <td></td>
-      </tr>
+      <div>
+        <p>
+        Novedad: <?php echo $novedad['novedad']?>
+        <br>
+        Fecha: <?php echo $novedad['fecha']?>
+      </p>
+    </div>
       <?php
     }
   }else {
-    echo "NO HAY NOVEDADES";
+    echo "<tr>
+       <td align='center' style='color:red;' >NO HAY NOVEDADES></td>
+     </tr>";
   }
     ?>
-
-</body>
-
-</html>
