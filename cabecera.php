@@ -121,7 +121,8 @@ if (isset($_GET['a'])) {
 $pagina = "";
 if (isset($_GET['p'])) {
   $pagina = $_GET['p'];
-}else{
+}
+if(!isset($_GET['p'])){
   $pagina = "paginaprincipal";
 }
 ?>
