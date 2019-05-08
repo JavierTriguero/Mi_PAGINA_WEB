@@ -4,7 +4,6 @@ session_start();
 /*Incluyo los .php que me van hacer falta para el correcto funcionamiento de la web*/
 require_once("lib/conexion.php");
 require_once("lib/usuario.php");
-require_once("lib/alumno.php");
 require_once("lib/novedad.php");
 require_once("lib/productos_model.php");
 require("lib/fecha.php");
@@ -137,8 +136,27 @@ if(!isset($_GET['p'])){
     <link rel="stylesheet" href="css/simple-mobile-menu.css" type="text/css">
     <link rel="stylesheet" href="css/simple-mobile-menu-responsive.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" >
-    <link rel="stylesheet" href="css/estilo_galeria.css"type="text/css">
-    
+    <link rel="stylesheet" href="css\acceso.css" type="text/css">
+     <!-- APARTADO JAVASCRIPT-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="lib\js\reloj.js"></script>
+<!-- scripts -->
+    <script src="lib/js/jquery.min.js"></script>
+    <!-- uncomment if you need some Bootstrap JS functionality -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="lib/js/simple-mobile-menu.js"></script>
+    <script src="lib/js/fancybox_galeria.js"></script>
+ <!-- Add mousewheel plugin (this is optional) -->
+ <script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+ <!-- Add fancyBox -->
+ <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+ <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+ <!-- Optionally add helpers - button, thumbnail and/or media -->
+ <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+ <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+ <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+ <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+ <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 </head>
 <div class="smm">
         <div class="container">

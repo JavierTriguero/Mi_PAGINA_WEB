@@ -1,15 +1,27 @@
-<body>
+
   <header>
-   <?php include('cabecera.php');?>
+<?php include('cabecera.php');?>
   </header>
+  
   <main>
-      <aside class="aside-left">
-      </aside>
-      <div class="container">
+  <div id="ventanaModal" style="display:none;">
+         <h2>Título de la ventana</h2>
+         <p> Lorem ipsum </p>
+  </div> 
+  
+    <section class="grid">
+    <aside class="aside-left">
+    <a data-fancybox  data-src="#ventanaModal"  href="javascript:;" >
+       Abrir ventana
+</a> 
+    <a class="single-image"  href="" title="Ubuntu Computer"><img src="" alt=""/></a>
+    </aside>
+    <section class="center"> 
       <?php
-      if($pagina == "paginaprincipal"){
-        include("pages\añadirpaginaprincipal.php");
+      if($pagina=="paginaprincipal"){
+        include('pages/galeria.html');
       }
+      
       if (!isset($_SESSION['email'])) {
         if ($pagina == "acceder" || $pagina == "") {
           include("pages/acceso.php");
@@ -40,20 +52,18 @@
         }
       }
       ?>
+      </section>
+
+     
       <aside class="aside-rigth">
+        <h2 style="align:justify;"></h2>
       </aside>
-      </div>
+      </section>
+      
     </main>
     <footer>
-   <?php include('footer.php');?>      
+    <p><a href="index.php?">Home</a> | <a href="#">About Us</a> | <a href="#">Products</a> | <a href="#">Our Services</a> | <a href="#">Contact Us</a><br />
+        Pollos Rufino &copy; 2019<br />
+      </p>     
     </footer>
-  <!-- APARTADO JAVASCRIPT-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="lib\js\reloj.js"></script>
-<!-- scripts -->
-<script src="lib/js/jquery.min.js"></script>
-    <!-- uncomment if you need some Bootstrap JS functionality -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-    <script src="lib/js/simple-mobile-menu.js"></script>
-</body>
-</html>
+ 

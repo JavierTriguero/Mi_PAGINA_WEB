@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--  <link rel="stylesheet" type="text/css" href="./style/master.css">
-    <link rel="stylesheet" type="text/css" href="./style/registro.css"> -->
-</head>
-
-<body>
     <span class="titulo">REGISTRO DE USUARIOS</span>
     <form action="index.php?p=registrarse" method="post" enctype="multipart/form-data">
         <div id="registro">
@@ -81,7 +69,4 @@
           print("</div>");
         }
         ?>
-    </form>
-</body>
-
-</html> 
+    </form> 

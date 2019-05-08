@@ -9,18 +9,6 @@ if(isset($_POST['guardar_producto'])){
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--	<link rel="stylesheet" type="text/css" href="./style/master.css">
-	<link rel="stylesheet" type="text/css" href="./style/alta_modificar_borrar_Alumnos.css">-->
-</head>
-
-<body>
 
 	<div id="marco">
 	<span class="titulo">DAR DE ALTA  PRODUCTO</span>
@@ -35,8 +23,3 @@ if(isset($_POST['guardar_producto'])){
 		<tr><td align="center" colspan="2"><input type="submit" value="GUARDAR" name="guardar_producto"></td></tr>	
 	</table>
 </form>
-		
-	</div>
-</body>
-
-</html>
