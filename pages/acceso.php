@@ -1,13 +1,14 @@
-
-  <span class='titulo'>INICIAR SESIÓN</span>
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>INICIAR SESIÓN</p>
+  
   <form action="index.php?p=acceder" method="post" enctype="multipart/form-data">
-    <div id="acceso">
+ <p style="justify-content:center;">
    <?php if (!empty($msg)) {
           print("<div style='text-align:center; padding:10px; background:lightyellow; border:2px solid black; box-sizing:border-box; width:304px; margin-top:10px;' id='cajaMensaje'>");
           print("<span style='color:red;'><b>$msg</b></span>");
           print("</div>");
         }
         ?>
+  <p>
       <table>
         <tr>
           <th colspan=2>ACCEDER</th>
@@ -15,18 +16,18 @@
         </tr>
         <tr>
           <td>
-            <label>E-MAIL:</label>
+            <label>E-MAIL: </label>
           </td>
           <td>
-            <input type="text" name="email">
+            <input style="background: white;" type="text" name="email">
           </td>
         </tr>
         <tr>
           <td>
-            <label>CONTRASEÑA:</label>
+            <label>CONTRASEÑA: </label>
           </td>
           <td>
-            <input type="password" name="pass">
+            <input style="background: white;" type="password" name="pass">
           </td>
         </tr>
         <tr>
@@ -36,5 +37,4 @@
           <td></td>
         </tr>
       </table>
-    </div>
   </form>

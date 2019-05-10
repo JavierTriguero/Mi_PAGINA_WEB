@@ -2,17 +2,19 @@
 session_start();
 include('.\include\pdf\fpdf.php');
 include('.\include\connection.php'); 
+include('.\include\fecha.php'); 
+
 function añadirReserva(){
 	$nombre=$_SESSION['nombre'];
 	$nom_usuario=$_SESSION['nombre_usuario'];
 	$dni=$_SESSION['dni'];
 	$email=$_SESSION['email'];
-	$numero_pedido=rand(1,1000000);
+	$fecha = date("d-m-Y");
 	$cuerpo_de_reserva=(string)cuerpoReserva();
 	//Añado la reserva a la base de datos
 	$mysqli=Conexion::conectarBD('localhost','root','','pollosrufino');
-    $sql = "INSERT INTO reservas (num_reserva,nombre,nom_usuario,dni,email,cuerpo_reserva)
-			VALUES('$numero_pedido', '$nombre', '$nom_usuario','$dni','$email','$cuerpo_de_reserva')";
+    $sql = "INSERT INTO reservas (nombre,nom_usuario,dni,email,cuerpo_reserva,fecha_reserva)
+			VALUES('$nombre', '$nom_usuario','$dni','$email','$cuerpo_de_reserva','$fecha')";
 	$mysqli->query($sql);
     Conexion::desconectarBD($mysqli);
 }
@@ -98,7 +100,7 @@ $pdf = new PDF();
 	$pdf->SetFont('Arial','',15);	
 	$pdf->setTextColor(255, 51, 51);  
 	$pdf->Cell(0,5,'No te olvides de presentar este documento en nuestras tiendas.',0,10,'B',false);
-	$pdf->Cell(50,5,'Gracias!',0,10,'B',false);
+	$pdf->Cell(50,5,'Gracias!Solo valida para 24h',0,10,'B',false);
 	$pdf->ln();
 
 		$pdf->SetFont('Arial','',15);

@@ -14,7 +14,6 @@
     <a data-fancybox  data-src="#ventanaModal"  href="javascript:;" >
        Abrir ventana
 </a> 
-    <a class="single-image"  href="" title="Ubuntu Computer"><img src="" alt=""/></a>
     </aside>
     <section class="center"> 
       <?php
@@ -48,8 +47,12 @@
         } else if ($pagina == "formulariosugerencias") {
           include("pages/formulariosugerencias.php");
         }else if ($pagina == "condiciones") {
-          include("pages/condiciones de uso.html");
+          include("pages/Condiciones de uso.php");
+        }else if ($pagina == "verReservas") {
+          include("pages/verReservas.php");
         }
+        
+        
       }
       ?>
       </section>
@@ -64,6 +67,13 @@
     <footer>
     <p><a href="index.php?">Home</a> | <a href="#">About Us</a> | <a href="#">Products</a> | <a href="#">Our Services</a> | <a href="#">Contact Us</a><br />
         Pollos Rufino &copy; 2019<br />
-      </p>     
+      </p>
+      <script>
+ $("#realizarreserva").click(function () {
+   alert("Vas a ser redirigido a otra parte de la pagina"); 
+   e.preventDefault();
+   
+ });
+ </script>     
     </footer>
  

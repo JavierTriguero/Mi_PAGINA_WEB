@@ -35,6 +35,8 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/reset.css">
+
 
     <title>Carrito :Reserva</title>
 
@@ -46,10 +48,11 @@
 
         <div id="main">
         <?php require($_page.".php"); ?>
+        <a href="../../index.php?p=inicio">Volver a la página principal</a>
         </div><!--end main-->
         
         <div id="sidebar">
-       <a href="../../index.php?p=inicio">Volver a la página principal</a>
+
         </div><!--end sidebar-->
 
     </div><!--end container-->

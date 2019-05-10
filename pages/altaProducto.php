@@ -3,7 +3,7 @@ if(isset($_POST['guardar_producto'])){
 	$datos_prod=array('cod_prod'=>$_POST['cod_prod'],'descripcion'=>$_POST['descripcion'],'pvp'=>$_POST['pvp'],'existencias'=>$_POST['existencias']);
 	$producto=new Producto();
 	$producto->set($datos_prod);
-	$msg="Producto {$_POST['cod_prod']} dado de alta";
+	$msg="PRODUCTO {$_POST['cod_prod']} DADO DE ALTA";
 }else{
 	$msg="Introduce los datos necesarios para dar de alta";
 }
@@ -11,8 +11,9 @@ if(isset($_POST['guardar_producto'])){
 ?>
 
 	<div id="marco">
-	<span class="titulo">DAR DE ALTA  PRODUCTO</span>
-		<p><?php echo "$msg" ?></p>
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>DAR DE ALTA  PRODUCTO</p>
+
+		<h3><?php echo "$msg" ?></h3>
 <form action="index.php?p=altaProducto" method="post">
 	<table>
 		<tr><td align="right">NOMBRE PRODUCTO: </td><td align="left"><input type="text" name="cod_prod" size="5" maxlength="5"></td></tr>

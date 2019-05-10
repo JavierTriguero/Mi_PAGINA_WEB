@@ -39,7 +39,7 @@ if (isset($_POST['acceder'])) {
       unset($usuario);
     }
   } else {
-    $msg = "El correo existe en la base de datos";
+    $msg = "El correo NO existe en la base de datos";
     unset($usuario);
   }
 }
@@ -136,10 +136,11 @@ if(!isset($_GET['p'])){
     <link rel="stylesheet" href="css/simple-mobile-menu.css" type="text/css">
     <link rel="stylesheet" href="css/simple-mobile-menu-responsive.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" >
-    <link rel="stylesheet" href="css\acceso.css" type="text/css">
+    <link rel="stylesheet" href="css/formularios.css">
      <!-- APARTADO JAVASCRIPT-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="lib\js\reloj.js"></script>
+
 <!-- scripts -->
     <script src="lib/js/jquery.min.js"></script>
     <!-- uncomment if you need some Bootstrap JS functionality -->
@@ -173,11 +174,12 @@ if(!isset($_GET['p'])){
       } else { ?>
           <?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
             <li><a href="index.php?p=inicio" title="Inicio">INICIO</a></li>
+            <li><a href="index.php?p=verReservas" title="verReserva">VER RESERVA</a></li>
             <li><a href="index.php?p=verNovedad" title="verNovedad"> VER NOVEDADES</a></li>
             <li><a href="index.php?p=verPerfil" title="verPerfil"> VER PERFIL</a></li>
             <li><a href="index.php?p=modificarPerfil" title="modificarPerfil"> MODIFICAR PERFIL</a></li>
             <li><a href="index.php?p=formulariosugerencias" title="Sugerencia">SUGERENCIAS</a></li>
-            <li><a href="pages\realizar_reserva\index.php" title="realizar_reserva"> REALIZAR RESERVA</a></li>
+            <li><a href="pages\realizar_reserva\index.php" title="realizar_reserva" id="realizarreserva"> REALIZAR RESERVA</a></li>
           <?php
         }
         if ($_SESSION['tipoUsr'] == "administrador") { ?>

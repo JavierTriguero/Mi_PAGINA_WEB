@@ -179,7 +179,8 @@ main p:last-of-type {
 }
 main section.grid{
   background: #966c2e;
-}
+  }
+
 /* Tablets en horizonal y escritorios normales
    ------------------------------------------------------------------------- */
 @media (min-width: 768px) and (max-width: 2000px) {
@@ -246,6 +247,7 @@ main aside.aside-rigth{
     
   }
   main aside.aside-left{
+    
     background: #d6af75;
   grid-column-start: 1;
   grid-column-end:4;

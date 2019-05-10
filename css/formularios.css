@@ -1,0 +1,38 @@
+form{
+    background:#dfc8a3;
+    display:flex;
+    justify-content: center;
+    padding:20px;
+    border:solid 5px #684c20;
+    width: auto;
+}
+form input:focus{
+    background:rgb(210, 223, 100);
+    
+}
+p .titulo{
+    display:flex;
+    justify-content: center;
+    color:white;
+    background: #684c20;
+}
+
+form input:invalid{
+    background:rgb(207, 120, 120);
+}
+form input:valid{
+    background:rgb(229, 238, 195);
+}
+form input[type="submit"],form input[type="reset"]{
+    background: rgb(79, 79, 201);
+    color:white;
+    padding:20px;
+    width: 200px;
+}
+form input[type="reset"]{
+    background: rgb(216, 51, 51);
+    color:white;
+    padding:20px;
+    width: 200px;
+
+}

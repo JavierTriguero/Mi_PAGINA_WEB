@@ -12,32 +12,25 @@ if (isset($_POST['publicar'])) {
 }else{
 	$msg="Introduce la novedad";
 } ?>
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--	<link rel="stylesheet" type="text/css" href="./style/master.css">
-	<link rel="stylesheet" type="text/css" href="./style/alta_modificar_borrar_Alumnos.css">-->
-</head>
-
-<body>
-
-	<div id="marco">
 		
-		<span class="titulo">CREAR NOVEDAD</span>
-		<p><?php echo "$msg" ?></p>
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>CREAR NOVEDAD</p>
+		<p style="text-align:justify;font-weight:bold; font-size:20px;"><?php echo "$msg" ?></p>
 		<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-			NOVEDAD:<br>
-			<textarea style="resize:none;" cols="55" rows="4" name="texto"></textarea><br>
-
-			<input type="submit" value="Publicar" name="publicar">
+		<table>
+		<tr>
+          <td>
+		  NOVEDAD:
+			
+		  </td>
+		  <td>
+			  <textarea style="resize:none;" cols="55" rows="4" name="texto"></textarea><br>
+		</td>
+		</tr>	
+		<tr>
+          <td>
+		  <input type="submit" value="Publicar" name="publicar">
+			
+		  </td>
+			
+			</table>
 		</form>
-		
-	</div>
-</body>
-
-</html>

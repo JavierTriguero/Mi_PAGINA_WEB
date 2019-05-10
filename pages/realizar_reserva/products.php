@@ -73,7 +73,7 @@
             <td><?php echo $f['cod_prod'] ?></td> 
             <td><?php echo $f['descripcion'] ?></td> 
             <td><?php echo $f['pvp'] ?>€</td> 
-            <td><a onclick="alert('Se ha añadido el producto a tú reserva');" href="index.php?page=products&action=add&id=<?php echo $f['id_product'] ?>">Añadir al carrito</a></td> 
+            <td><a onclick="alert('Se ha añadido el producto <?php echo $f['cod_prod'] ?> a tú reserva');" href="index.php?page=products&action=add&id=<?php echo $f['id_product'] ?>">Añadir al carrito</a></td> 
         </tr> 
 <?php 
           
