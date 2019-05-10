@@ -19,7 +19,7 @@
             <label>E-MAIL: </label>
           </td>
           <td>
-            <input style="background: white;" type="text" name="email">
+            <input style="background: white;" type="text" name="email" required>
           </td>
         </tr>
         <tr>

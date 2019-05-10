@@ -1,48 +1,49 @@
 <?php
-if(isset($_POST['buscar'])){
- $correo=$_POST['email'];
+ 
  $mysqli=Conexion::conectarBD('localhost','root','','pollosrufino');
- $sql="SELECT * FROM reservas
-        WHERE email=$correo";
+ $sql="SELECT * FROM reservas ORDER BY num_reserva ASC";
 $res=$mysqli->query($sql);
+$row_cnt = $res->num_rows;
 
 ?>
-    <?php 
-    
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>RESERVAS</p> 
+<form>
+    <?php
+      
+  if($row_cnt>0){    
     while($f=$res->fetch_assoc()){
         ?>
-        <div>
-          <p>
-          Numero reserva <?php echo $f['num_reserva']?>
-            </p>
-        <p>
-          NOMBRE: <?php echo $f['nombre']?>
-        </p>
-        <p>
-          NOMBRE DE USUARIO: <?php echo $f['nom_usuario']?>
-        </p>
-        <p>
-          DNI: <?php echo $f['dni']?>
-        </p>
-        <p>
-          EMAIL: <?php echo $f['email']?>
-        </p>
-        <p>
-          CONTENIDO: <?php echo $f['cuerpo_reserva']?>
-        </p>
-      </div>
+       
+        <table>
+          <tr><td><-----------------------------------------></td></tr>
+          <tr>
+          <td> Numero reserva <?php echo $f['num_reserva']?><td>
+          </tr>
+        <tr>
+           <td> NOMBRE: <?php echo $f['nombre']?></td>
+        </tr>
+        <tr>
+           <td> NOMBRE DE USUARIO: <?php echo $f['nom_usuario']?></td>
+        </tr>
+        <tr>
+           <td> DNI: <?php echo $f['dni']?></td>
+        </tr>
+        <tr>
+           <td> EMAIL: <?php echo $f['email']?></td>
+        </tr>
+        <tr>
+           <td> CONTENIDO: <?php echo $f['cuerpo_reserva']?></td>
+        </tr>
+    </table>
+    </form>
       <?php
     }
- 
-Conexion::desconectarBD($mysqli);
+    Conexion::desconectarBD($mysqli);
+  }else{
+
       
     echo "<tr>
-       <td align='center' style='color:red;' >NO HAY NOVEDADES></td>
+       <td align='center' style='color:red;' >NO HAY RESERVAS></td>
      </tr>";
   }
 ?>
-<form action="index.php?p=verReservas" method="post"  enctype="multipart/form-data"> 
- EMAIL: <input type="text" name="email" >
-
- <input type="submit" value="BUSCAR" name="buscar">
-</form>

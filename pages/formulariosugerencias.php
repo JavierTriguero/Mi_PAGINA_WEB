@@ -21,17 +21,38 @@
         }
         
         </script>
-        <h3>Formulario de Sugerencias</h3>
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>FORMULARIO DE SUGERENCIAS</p>
         <form id="form1" name="form1" action="./pages/mail.php" method="POST">
-         <p>
-             Correo electrónico: <input type="email" name="mail" id="mail" value="tienda_pollos@gmail.com" readonly >
-        </p>
-            Sugerencia: 
-            <p>
-                <textarea placeholder="Escribe aquí tú sugerencía" style="resize:none;" name="com" id="com" cols="25" rows="5" ></textarea>
+        <table>
+        <tr>
+        <td>
+                        <label>Correo electrónico:</label>
+                    </td>
+                    <td>
+                    <input type="email" name="mail" id="mail" value="tienda_pollos@gmail.com" readonly >
+					    </td>
+      </tr>
+      <tr>
+        <td>
+                        <label>Sugerencia</label>
+                    </td>
+                    <td>
+                    <textarea placeholder="Escribe aquí tú sugerencía (solo letras)" style="resize:none;" name="com" id="com" cols="25" rows="5" required pattern="^[a-zA-z]$" ></textarea>
 
-            <p> Aceptas los terminos y <a href="index.php?p=condiciones">Condiciones de uso de tus datos.</a>    <input type="checkbox" name="condicion" id="condicion" onclick="checkifempty()" required/></p> 
-
-        </p>
-        <input type="submit" name="registrarse" id="registrarse" disabled="true">
-        </form>
+            
+              </td>
+              <td>
+              Aceptas los terminos y <a href="index.php?p=condiciones">Condiciones de uso de tus datos.</a>    <input type="checkbox" name="condicion" id="condicion" onclick="checkifempty()" required/>
+              </td> 
+      </tr>  
+       
+      <tr>
+                    <td colspan=2 id="enviar">
+                        <input type="submit" name="registrarse" id="registrarse" disabled="true">
+                    </td>
+                    <td></td>
+                </tr>
+        </table> 
+        <br> 
+       
+      </form>

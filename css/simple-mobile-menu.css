@@ -180,10 +180,28 @@ main p:last-of-type {
 main section.grid{
   background: #966c2e;
   }
+  main section.grid center{
+    padding:20px;
+  }
+  main section.grid .aside-left{
+    padding:20px;
+   
+  }
+   main section.grid .aside-right{
+    padding:20px;
+   
+  }
+  main a{
+    text-decoration:none;
+    color:white;
+    padding:5px;
+    background:black;
+
+  }
 
 /* Tablets en horizonal y escritorios normales
    ------------------------------------------------------------------------- */
-@media (min-width: 768px) and (max-width: 2000px) {
+@media (min-width: 991px) and (max-width: 2000px) {
 main section.grid{
   background: #bb9966;
   display: grid;
@@ -196,13 +214,11 @@ main section.grid{
 }
 main section.center{
   background: #d6af75;
-  grid-column-start: 4;
-  grid-column-end:7;
+  grid-column-start: 3;
+  grid-column-end:8;
   grid-row-start: 1;
   grid-row-end:5;
-  box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
-    box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75); 
+  
 }
 main aside.aside-left{
   background: #d6af75;
@@ -210,9 +226,6 @@ main aside.aside-left{
   grid-column-end:3;
   grid-row-start: 1;
   grid-row-end:5; 
-  box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
-    box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
 }
 main aside.aside-rigth{
   background: #d6af75;
@@ -220,16 +233,14 @@ main aside.aside-rigth{
   grid-column-end:9;
   grid-row-start: 1;
   grid-row-end:5; 
-  box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
-    -moz-box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
-    box-shadow: inset 2px 7px 30px -7px rgba(0,0,0,0.75);
+
 }
 
 }
  
 /* Móviles en horizontal o tablets en vertical
    ------------------------------------------------------------------------- */
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   main section.grid{
     background: #bb9966;
     display: grid;
@@ -255,6 +266,7 @@ main aside.aside-rigth{
   grid-row-end:5; 
   }
   main aside.aside-rigth{
+    display:none;
     background: #d6af75;
     grid-column-start:7;
   grid-column-end:9;

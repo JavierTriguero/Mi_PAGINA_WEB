@@ -35,9 +35,9 @@ if(isset($_POST['modificar'])){
 
 
 ?>
-    <span class="titulo">Modificar perfil de <?php print( $_SESSION['nombre']);?></span>
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>MODIFICAR PERFIL <?php print( $_SESSION['nombre']);?></p>
     <form action="index.php?p=modificarPerfil" method="post" enctype="multipart/form-data">
-        <div id="registro">
+        <div id="modificar">
             <table>
                 <tr>
                     <th colspan=2>MODIFICAR</th>
@@ -48,7 +48,7 @@ if(isset($_POST['modificar'])){
                         <label>Nombre:</label>
                     </td>
                     <td>
-                        <input type="text" name="nombre" id="nombre" >
+                        <input type="text" name="nombre" id="nombre" pattern="^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$">
                     </td>
                 </tr>
                 <tr>
@@ -56,7 +56,7 @@ if(isset($_POST['modificar'])){
                         <label>DNI:</label>
                     </td>
                     <td>
-                        <input type="text" name="dni" id="dni">
+                        <input type="text" name="dni" id="dni" pattern="(([X-Z]{1})([-]?)(\d{7})([-]?)([A-Z]{1}))|((\d{8})([-]?)([A-Z]{1}))">
                     </td>
                 </tr>
                 <tr>
@@ -64,7 +64,7 @@ if(isset($_POST['modificar'])){
                         <label>Nombre usuario:</label>
                     </td>
                     <td>
-                        <input type="text" name="nombre_usuario" id="nombre_usuario">
+                        <input type="text" name="nombre_usuario" id="nombre_usuario" pattern="^[a-z0-9]{3,16}$">
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +72,7 @@ if(isset($_POST['modificar'])){
                         <label>Contraseña</label>
                     </td>
                     <td>
-                        <input type="password" name="pass" id="pass">
+                        <input type="password" name="pass" id="pass" pattern="^(?=(?:.*\d){3})(?=(?:.*[A-Z]){3})(?=(?:.*[a-z]){3})\S{8,}$">
                     </td>
                 </tr>
                 <tr>

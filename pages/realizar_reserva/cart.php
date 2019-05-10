@@ -100,8 +100,8 @@ if (isset($_POST['submit'])) {
                 <p>Para eliminar un producto de tu reserva,pon a 0 la cantidad</p>
             <?php
         } else {
-            echo "<h3 style='color:red;'>Actualmente no hay productos añadidos al carro</h3>";
-            echo "<h4 style='color:red;'>Por favor,aseguresé de añadir productos a su reserva para poder ver el contenido de la misma</h4>";
+            echo "<h3 style='color:yellow;'>Actualmente no hay productos añadidos al carro</h3>";
+            echo "<h4 style='color:yellow;'>Por favor,aseguresé de añadir productos a su reserva para poder ver el contenido de la misma</h4>";
         }
         ?>
 

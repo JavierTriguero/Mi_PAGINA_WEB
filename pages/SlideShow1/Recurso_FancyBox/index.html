@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>Galeria profesionales</title>
+	
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	
+	<!-- Add fancyBox -->
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	
+	<!-- Optionally add helpers - button, thumbnail and/or media -->
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+	
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	
+	
+	<style>
+	body{
+		background:rgb(180, 154, 120) ;
+	}
+		h2{
+			clear:both;
+		}
+	
+		.gallery-image img{
+			width:256px;
+			height:auto;
+			float:left;
+			margin-right:10px;
+		}
+
+		#galeria img{
+			width:256px;
+			height:auto;
+			float:left;
+			margin-right:10px;
+		}
+
+		
+	</style>
+	
+	<script>
+	
+		$(function(){
+			
+			//$(".gallery-image").fancybox({
+				
+				$("#galeria a").fancybox({
+				
+			//	Primera manera de hacer una galeria de imagenes
+			
+			openEffect :'fade',//empieza abriendo se
+					closeEffect:'fade',//se esconde
+					closeBtn:false,
+					helpers:{
+						tittle:{
+							type:'float'//como se queda el tittle
+						},
+						thumbs:{
+							width:50//tamaño
+						},
+						buttons :{},//ningun boton
+						changeSpeed:12000,//velocidad
+						overlay:{//fuera de la imagen
+							css :{
+								'background':'rgb(0,0,0,0,5)'//color de fondo
+							}
+						}
+					}
+			
+		
+			
+			/*
+
+			Segunda manera de hacer una galeria
+					openEfecct :'elastic',
+					closeEffect :'elastic',
+					openSpeed : 'slow',
+					CloseSpeed: 'normal',
+					helpers:{
+						title:{
+							type:'over'
+						},
+						overlay:{
+							closeClick:true
+						}
+					},
+					padding :20
+				*/
+
+
+
+
+					/*
+					Tercer modo de hacer una galeria de imagenes
+					'opacity':true,
+					'overlayShow':false,
+					'transitionIn':'elastic',
+					'transitionOut':'none'
+
+					*/
+
+
+			}); // Fin de la función FancyBox
+
+
+
+		}); // Fin de la funcion JQuery
+
+	</script>
+
+</head>
+
+<body>
+
+
+<h1> Galería de Profesionales</h1>
+	<div id="galeria">
+	<a href="imgs/bienvenido.jpg" rel="galeria" title="Bienvenido">
+		<img src="imgs/bienvenido.jpg" alt="Bienvenido"/></a>
+	<a href="imgs/concinero.jpg" rel="galeria" title="Cocinero">
+		<img src="imgs/concinero.jpg" alt="Cocinero"/></a>
+	<a href="imgs/navidad rufino.jpg" rel="galeria" title="rufino">
+		<img src="imgs/navidad rufino.jpg" alt="navidadrufino"/></a>
+	<a href="imgs/cocinero-reserva-pedido.jpg" rel="galeria" title="navidad">
+		<img src="imgs/cocinero-reserva-pedido.jpg" alt="Cocinero"/></a>
+	<a href="imgs/profesional.jpg" rel="galeria" alt="profesional" title="Cocinero">
+			<img src="imgs/profesional.jpg" alt="profesional"/></a>
+			<a href="imgs/family pollos rufino.jpg" rel="galeria" title="Cocinero">
+				<img src="imgs/family pollos rufino.jpg" alt="Familia"/></a>
+				<a href="imgs/Pollos rufino miembrojpg.jpg" rel="galeria" title="familia">
+					<img src="imgs/Pollos rufino miembrojpg.jpg" alt="Familia"/></a>
+				<a href="imgs/Pollos rufino miembrojpg.jpg" rel="galeria" title="familia">
+					<img src="imgs/Pollos rufino miembrojpg.jpg" alt="Familia"/></a
+		
+	</div>
+
+
+</body>
+
+</html>

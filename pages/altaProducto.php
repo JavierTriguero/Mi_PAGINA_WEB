@@ -16,8 +16,8 @@ if(isset($_POST['guardar_producto'])){
 		<h3><?php echo "$msg" ?></h3>
 <form action="index.php?p=altaProducto" method="post">
 	<table>
-		<tr><td align="right">NOMBRE PRODUCTO: </td><td align="left"><input type="text" name="cod_prod" size="5" maxlength="5"></td></tr>
-		<tr><td align="right">DESCRIPCION: </td><td align="left"><input type="text" name="descripcion" size="20" maxlength="20"></td></tr>
+		<tr><td align="right">NOMBRE PRODUCTO: </td><td align="left"><input type="text" name="cod_prod" size="30" maxlength="30"></td></tr>
+		<tr><td align="right">DESCRIPCION: </td><td align="left"><input type="text" name="descripcion" size="30" maxlength="30"></td></tr>
 		<tr><td align="right">PVP: </td><td align="left"><input type="text" name="pvp" size="8" maxlength="8"></td></tr>
 		<tr><td align="right">EXISTENCIAS: </td><td align="left"><input type="text" name="existencias" size="8" maxlength="8"></td></tr>
 		

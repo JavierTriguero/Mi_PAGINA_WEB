@@ -3,22 +3,30 @@
 <?php include('cabecera.php');?>
   </header>
   
-  <main>
-  <div id="ventanaModal" style="display:none;">
-         <h2>Título de la ventana</h2>
-         <p> Lorem ipsum </p>
-  </div> 
-  
+  <main>  
     <section class="grid">
     <aside class="aside-left">
-    <a data-fancybox  data-src="#ventanaModal"  href="javascript:;" >
-       Abrir ventana
-</a> 
+    <p>
+    <h3>Paginas de interes</h3>
+    </p>
+    <p>
+       <!--Cuando es clickeado abre una nueva ventana con nada, porque me parecia mejor así quedaba mas limpio asi,-->              
+        <a href="pages/reloj.html" target="_blank" onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;">RELOJ</a>
+    <a href="pages/SlideShow2/Recurso_FancyBox/index.html" target="_blank" id="producto">NUESTROS PRODUCTOS</a>
+    </p>
+    <p>
+    <a href="pages/jungla.html"id="jungla" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;"tittle="Haz lo que quieras aquí">JUNGLA</a>
+    <a href="pages/SlideShow1/Recurso_FancyBox/index.html" target="_blank" onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false; "id="profesionales" tittle="los provesionales de pollos rufino">PROFESIONALES</a>
+    </p>
+
+                                                       
+    
+    
     </aside>
     <section class="center"> 
       <?php
       if($pagina=="paginaprincipal"){
-        include('pages/galeria.html');
+        include('pages/paginaprincipal.html');
       }
       
       if (!isset($_SESSION['email'])) {
@@ -56,24 +64,26 @@
       }
       ?>
       </section>
-
-     
       <aside class="aside-rigth">
-        <h2 style="align:justify;"></h2>
+        <h2 style="align:justify;">
+      AQUI ESTARÁ TU PUBLICIDAD</h2>
       </aside>
       </section>
       
     </main>
     <footer>
-    <p><a href="index.php?">Home</a> | <a href="#">About Us</a> | <a href="#">Products</a> | <a href="#">Our Services</a> | <a href="#">Contact Us</a><br />
+
+    <p><a href="index.php">Home</a> | <a  href="pages/historia_pollosrufino.html"id="sobre_nosotros" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;" tittle="nuestra historia"><a href="pages/contacta_con_nosotros.html" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;" tittle="Contacta con nosotros">Contacta con nosotros</a><br />
         Pollos Rufino &copy; 2019<br />
       </p>
-      <script>
- $("#realizarreserva").click(function () {
-   alert("Vas a ser redirigido a otra parte de la pagina"); 
-   e.preventDefault();
-   
- });
- </script>     
-    </footer>
+        <!-- APARTADO JAVASCRIPT-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- scripts -->
+    <script src="lib/js/jquery.min.js"></script>
+    <!-- uncomment if you need some Bootstrap JS functionality -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="lib/js/simple-mobile-menu.js"></script>
+    <script src="lib/js/redireccion.js"></script>  
+    <script src="lib/js/bootstrap.min.js"></script>
+  </footer>
  

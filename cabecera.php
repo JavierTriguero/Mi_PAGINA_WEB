@@ -10,6 +10,7 @@ require("lib/fecha.php");
 define("ESPERA", 10);
 ?>
 <?php
+
 /*PARA ACCEDER CON TU CUENTA DE USUARIO*/
 if (isset($_POST['acceder'])) {
   $email = $_POST['email'];
@@ -129,7 +130,6 @@ if(!isset($_GET['p'])){
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css\relojanalogico.css">
     <!-- styles -->
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -137,32 +137,12 @@ if(!isset($_GET['p'])){
     <link rel="stylesheet" href="css/simple-mobile-menu-responsive.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" >
     <link rel="stylesheet" href="css/formularios.css">
-     <!-- APARTADO JAVASCRIPT-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="lib\js\reloj.js"></script>
-
-<!-- scripts -->
-    <script src="lib/js/jquery.min.js"></script>
-    <!-- uncomment if you need some Bootstrap JS functionality -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-    <script src="lib/js/simple-mobile-menu.js"></script>
-    <script src="lib/js/fancybox_galeria.js"></script>
- <!-- Add mousewheel plugin (this is optional) -->
- <script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
- <!-- Add fancyBox -->
- <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
- <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
- <!-- Optionally add helpers - button, thumbnail and/or media -->
- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
- <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
- <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
- <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
- <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+  
 </head>
 <div class="smm">
         <div class="container">
           <div class="smm__container js-smm-container">
-            <h1 class="smm__logo-wrapper"><a href="#"><img src="images\Icono_Plato_de_pollo_asador_barato.jpg" alt="Logo" width="120" height="60"></a></h1>
+            <h1 class="smm__logo-wrapper"><a href="#"></a></h1>
             <button class="btn btn-default smm__toggle js-smm-toggle visible-xs-block visible-sm-block"><i class="fa fa-bars"></i></button>
             <nav class="smm__collapse">
               <ul class="smm__primary-menu">
@@ -173,8 +153,8 @@ if(!isset($_GET['p'])){
         <?php
       } else { ?>
           <?php if ($_SESSION['tipoUsr'] == "usuario") { ?>
-            <li><a href="index.php?p=inicio" title="Inicio">INICIO</a></li>
-            <li><a href="index.php?p=verReservas" title="verReserva">VER RESERVA</a></li>
+            <li><a href="index.php?p=paginaprincipal" title="Inicio">INICIO</a></li>
+            
             <li><a href="index.php?p=verNovedad" title="verNovedad"> VER NOVEDADES</a></li>
             <li><a href="index.php?p=verPerfil" title="verPerfil"> VER PERFIL</a></li>
             <li><a href="index.php?p=modificarPerfil" title="modificarPerfil"> MODIFICAR PERFIL</a></li>
@@ -184,6 +164,7 @@ if(!isset($_GET['p'])){
         }
         if ($_SESSION['tipoUsr'] == "administrador") { ?>
             <li><a href="index.php?p=inicio" title="Inicio">INICIO</a>
+            <li><a href="index.php?p=verReservas" title="verReserva">VER RESERVA</a></li>
             <li><a href="index.php?p=CrearNovedad" title="CrearNovedad">CREAR NOVEDADES</a>
             <li><a href="index.php?p=altaProducto" title="altaProducto">ALTA PRODUCTO</a>
             <li><a href="index.php?p=modificarProducto" title="modificarProducto">MODIFICAR PRODUCTO</a>
