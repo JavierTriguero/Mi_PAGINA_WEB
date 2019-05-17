@@ -73,7 +73,7 @@
     </main>
     <footer>
 
-    <p><a href="index.php">Home</a> | <a  href="pages/historia_pollosrufino.html"id="sobre_nosotros" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;" tittle="nuestra historia"><a href="pages/contacta_con_nosotros.html" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;" tittle="Contacta con nosotros">Contacta con nosotros</a><br />
+    <p><a href="index.php">Home</a> | <a  href="pages/historia_pollosrufino.html"id="sobre_nosotros" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;" tittle="nuestra historia">Nuestra historia</a> | <a href="pages/contacta_con_nosotros.html" target="_blank"  onclick="window.open(this.href,this.target,'width=1000,height=1000,top=200,left=200,toolbar=no,location=no,status=no,menubar=no');return false;" tittle="Contacta con nosotros">Contacta con nosotros</a><br />
         Pollos Rufino &copy; 2019<br />
       </p>
         <!-- APARTADO JAVASCRIPT-->
