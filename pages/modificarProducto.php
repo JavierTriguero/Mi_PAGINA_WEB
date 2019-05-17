@@ -1,4 +1,5 @@
 ﻿<?php
+$msg="Selecciona el producto que quieras modificar";
 if(isset($_POST['guarda_cambios'])){
 	$datos_prod=array('cod_prod'=>$_POST['cod_prod'],'descripcion'=>$_POST['descripcion'],'pvp'=>$_POST['pvp'],'existencias'=>$_POST['existencias']);
 	$producto=new Producto();
@@ -10,8 +11,8 @@ if(isset($_POST['modi_producto'])){
 	$producto->get($_POST['cod_prod']);
 	if(isset($producto->cod_prod)){
 ?>
-		<span class="titulo">Modificar PRODUCTO</span>
-		
+		<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>MODIFICAR PRODUCTO</p>
+<h3><?php echo "$msg" ?></h3>
 
 		<form action="index.php?p=modificarProducto" method="post">
 			<table>	
@@ -32,7 +33,8 @@ if(isset($_POST['modi_producto'])){
  $producto->get_todos();
  $datos=$producto->get_productos();
 ?>
-	<span class="titulo">Modificar PRODUCTO</span>
+	<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>MODIFICAR PRODUCTO</p>
+<h3><?php echo "$msg" ?></h3>
 <form action="index.php?p=modificarProducto" method="post">
 	<table>
 		<tr><td align="right">DESCRIPCIÓN PRODUCTO: </td>

@@ -1,4 +1,5 @@
 ﻿<?php
+$msg="Selecciona el producto que quieras borrar";
 if(isset($_POST['borrar_producto'])){
 	$producto=new Producto();
 	$producto->get($_POST['cod_prod']);
@@ -14,6 +15,8 @@ if(isset($_POST['borrar_producto'])){
  $producto->get_todos();
  $datos=$producto->get_productos();
 ?>
+<p style="text-align:justify;font-weight:bold; font-size:20px;border:dotted white 5px;padding:5px;" class='titulo'>BORRAR PRODUCTO</p>
+<h3><?php echo "$msg" ?></h3>
 <form action="index.php?p=borrarProducto" method="post">
 	<table>
 		<tr><td align="right">CODIGO PRODUCTO: </td>
